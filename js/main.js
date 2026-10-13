@@ -10,7 +10,6 @@
   const tracks = sections
     .map((section) => ({ section, bar: section.querySelector(".sec-mark__track i") }))
     .filter((t) => t.bar);
-  const counters = [...document.querySelectorAll("[data-count]")];
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   if (year) year.textContent = String(new Date().getFullYear());
@@ -147,31 +146,6 @@
     sections.forEach((s) => s.classList.add("is-in"));
   }
 
-  /* Counters */
-  const animateCount = (el) => {
-    const target = Number(el.dataset.count || 0);
-    const start = performance.now();
-    const tick = (now) => {
-      const t = Math.min(1, (now - start) / 1200);
-      el.textContent = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
-      if (t < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-  if (counters.length && "IntersectionObserver" in window && !reducedMotion.matches) {
-    const cio = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          animateCount(entry.target);
-          cio.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.6 }
-    );
-    counters.forEach((el) => cio.observe(el));
-  }
-
   /* Research program: trace a line of work across the page */
   const labels = { markets: "Markets", structure: "Structure", physics: "Physics", brain: "Brain signals", chain: "Protocols" };
   const topicButtons = [...document.querySelectorAll("button[data-topic]")];
@@ -192,23 +166,16 @@
     mapRows.forEach((row) => row.classList.toggle("is-selected", row.dataset.row === topic));
     mapTable?.classList.toggle("has-selection", topic !== "all");
 
-    let papers = 0;
-    let roles = 0;
     topicNodes.forEach((node) => {
       const match = topic === "all" || (node.dataset.topics || "").split(/\s+/).includes(topic);
       node.classList.toggle("is-dimmed", !match);
-      if (match && node.classList.contains("writing")) papers += 1;
-      if (match && node.classList.contains("appointment")) roles += 1;
     });
 
-    const summary =
-      topic === "all"
-        ? ""
-        : `${labels[topic]}: ${papers} ${papers === 1 ? "manuscript" : "manuscripts"}, ${roles} ${roles === 1 ? "appointment" : "appointments"}`;
+    const summary = topic === "all" ? "" : `${labels[topic]}: related work highlighted across the page`;
     if (filterStatus) filterStatus.textContent = summary;
     if (tracer && tracerText) {
       tracer.hidden = topic === "all";
-      tracerText.textContent = topic === "all" ? "" : `Tracing ${summary}`;
+      tracerText.textContent = topic === "all" ? "" : `Tracing ${labels[topic]}`;
     }
     topicListeners.forEach((fn) => fn(topic));
   };

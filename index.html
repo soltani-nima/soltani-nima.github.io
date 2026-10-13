@@ -95,6 +95,7 @@
 
     <nav class="site-nav" id="siteNav" aria-label="Primary">
       <a href="#overview">About</a>
+      <a href="#education">Education</a>
       <a href="#themes">Research</a>
       <a href="#writing">Publications</a>
       <a href="#appointments">Appointments</a>
@@ -208,8 +209,30 @@
       </div>
     </section>
 
+    <section class="section section--compact" id="education" aria-labelledby="education-title">
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">02</span><span class="sec-mark__label">Education</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">Education</p>
+        <h2 id="education-title">Computer engineering at Shahid Beheshti</h2>
+      </header>
+      <div class="education sec-body reveal" data-reveal>
+        <div class="education__item">
+          <p class="education__label">University · 2023–present</p>
+          <h3>B.Sc. Computer Engineering</h3>
+          <p>Shahid Beheshti University, Tehran · 2023–present</p>
+          <p class="education__mark">GPA 3.6 / 4.0</p>
+        </div>
+        <div class="education__item">
+          <p class="education__label">Secondary · 2020–2023</p>
+          <h3>Diploma in Mathematics &amp; Physics</h3>
+          <p>Sampad (National Organization for Development of Exceptional Talents), Zanjan · 2020–2023</p>
+          <p class="education__mark">Top 0.2% · National University Entrance Exam</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="themes" aria-labelledby="themes-title">
-      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">02</span><span class="sec-mark__label">Research</span><span class="sec-mark__track"><i></i></span></div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">03</span><span class="sec-mark__label">Research</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head">
         <p class="sec-head__label">Research</p>
         <h2 id="themes-title">One program, five kinds of structure</h2>
@@ -381,7 +404,7 @@
     </section>
 
     <section class="section" id="writing" aria-labelledby="writing-title">
-      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">03</span><span class="sec-mark__label">Publications</span><span class="sec-mark__track"><i></i></span></div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">04</span><span class="sec-mark__label">Publications</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head sec-head--split">
         <div>
           <p class="sec-head__label">Publications</p>
@@ -428,7 +451,7 @@
     </section>
 
     <section class="section" id="appointments" aria-labelledby="appointments-title">
-      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">04</span><span class="sec-mark__label">Appointments</span><span class="sec-mark__track"><i></i></span></div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">05</span><span class="sec-mark__label">Appointments</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head">
         <p class="sec-head__label">Appointments</p>
         <h2 id="appointments-title">Three groups, three kinds of signal</h2>
@@ -484,115 +507,70 @@
           </div>
         </article>
       </div>
-
-      <div class="education sec-body reveal" data-reveal>
-        <div class="education__item">
-          <p class="education__label">Education</p>
-          <h3>B.Sc. Computer Engineering</h3>
-          <p>Shahid Beheshti University, Tehran · 2023–present</p>
-          <p class="education__mark">GPA 3.6 / 4.0</p>
-        </div>
-        <div class="education__item">
-          <p class="education__label">Before university</p>
-          <h3>Diploma in Mathematics &amp; Physics</h3>
-          <p>Sampad (National Organization for Development of Exceptional Talents), Zanjan · 2020–2023</p>
-          <p class="education__mark">Top 0.2% · National University Entrance Exam</p>
-        </div>
-      </div>
     </section>
 
     <section class="section" id="teaching" aria-labelledby="teaching-title">
-      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">05</span><span class="sec-mark__label">Teaching</span><span class="sec-mark__track"><i></i></span></div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">06</span><span class="sec-mark__label">Teaching</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head">
         <p class="sec-head__label">Teaching</p>
         <h2 id="teaching-title">Thirty-four sections at three universities</h2>
         <p class="sec-head__frame">
           Teaching assistantships since 2024, from first-year programming to graduate courses in
           blockchain technology, experimental design, and signals and digital control; six as head TA.
-          Every section is listed with its own instructor and term.
+          Listed by university as in the CV, newest first; each section has its own row.
         </p>
       </header>
 
-      <div class="explorer sec-body" id="explorer">
-        <div class="explorer__controls" role="group" aria-label="Filter teaching sections">
-          <div class="seg" role="group" aria-label="University">
-            <button type="button" data-inst="all" aria-pressed="true">All <span>34</span></button>
-            <button type="button" data-inst="sharif" aria-pressed="false">Sharif <span>14</span></button>
-            <button type="button" data-inst="aut" aria-pressed="false">Amirkabir <span>1</span></button>
-            <button type="button" data-inst="sbu" aria-pressed="false">Shahid Beheshti <span>19</span></button>
-          </div>
-          <div class="seg seg--toggles" role="group" aria-label="Role and level">
-            <button type="button" data-flag="head" aria-pressed="false">Head TA</button>
-            <button type="button" data-flag="grad" aria-pressed="false">Graduate</button>
-          </div>
-        </div>
-        <div class="waffle" id="waffle" aria-label="Sections per term; select a term to filter" role="group"></div>
-        <p class="explorer__status" id="teachStatus" aria-live="polite">Showing all 34 sections</p>
-
-        <div class="term" data-term="t5">
-          <h3 class="term__title">Sep 2026–Feb 2027 <span class="term__count">10 sections</span></h3>
-          <ul class="term__rows">
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Data Mining</span><span class="course__who">Dr. Mohammad Khalooei</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Compiler</span><span class="course__who">Ms. Samane Hosseinmardi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Machine Learning Systems Engineering</span><span class="course__who">Dr. Maryam Ramezani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="aut"><span class="tr__inst">Amirkabir</span><span class="course">Data Mining</span><span class="course__who">Dr. Behnam Yousefimehr</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sbu" data-head data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Principles of Design and Analysis of Experiments <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Narjes Soltani Dehaghani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sbu" data-head data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Signals and Systems and Digital Control <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Zeinab Pourbafarani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Database</span><span class="course__who">Dr. Hassan Haghighi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Engineering Probability and Statistics <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Narjes Soltani Dehaghani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
-            <li data-inst="sbu" data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Blockchain Technology <em class="tag">Graduate</em></span><span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+      <div class="unis sec-body reveal" data-reveal>
+        <div class="uni" data-inst="sharif">
+          <h3 class="uni__title"><span>Sharif University of Technology</span><span class="uni__count">14 sections</span></h3>
+          <ul class="uni__rows">
+            <li><span class="course">Data Mining</span><span class="course__who">Dr. Mohammad Khalooei</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Compiler</span><span class="course__who">Ms. Samane Hosseinmardi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Machine Learning Systems Engineering</span><span class="course__who">Dr. Maryam Ramezani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Logic Circuits</span><span class="course__who">Dr. Shahin Hessabi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li><span class="course">Scientific and Technical Presentation</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li><span class="course">Computer Architecture</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Nazari</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li><span class="course">Computer Architecture</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Fundamentals of Programming</span><span class="course__who">Ms. Marziyeh Sadri</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Zarei</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Nazari</span><span class="course__when">Sep 2024–Jan 2025</span></li>
           </ul>
         </div>
-
-        <div class="term" data-term="t4">
-          <h3 class="term__title">Feb–Jul 2026 <span class="term__count">7 sections</span></h3>
-          <ul class="term__rows">
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Shahin Hessabi</span><span class="course__when">Feb–Jul 2026</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Feb–Jul 2026</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Scientific and Technical Presentation</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Feb–Jul 2026</span></li>
-            <li data-inst="sbu" data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Blockchain Technology <em class="tag">Graduate</em></span><span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span><span class="course__when">Feb–Jul 2026</span></li>
-            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Linear Algebra <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Farokhlagha Moazami Goodarzi</span><span class="course__when">Feb–Jul 2026</span></li>
-            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Data Mining <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Ahmad-Ali Abin</span><span class="course__when">Feb–Jul 2026</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Advanced Programming</span><span class="course__who">Dr. Mojtaba Vahidi Asl</span><span class="course__when">Feb–Jul 2026</span></li>
+        <div class="uni" data-inst="aut">
+          <h3 class="uni__title"><span>Amirkabir University of Technology</span><span class="uni__count">1 section</span></h3>
+          <ul class="uni__rows">
+            <li><span class="course">Data Mining</span><span class="course__who">Dr. Behnam Yousefimehr</span><span class="course__when">Sep 2026–Feb 2027</span></li>
           </ul>
         </div>
-
-        <div class="term" data-term="t3">
-          <h3 class="term__title">Sep 2025–Feb 2026 <span class="term__count">7 sections</span></h3>
-          <ul class="term__rows">
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Nazari</span><span class="course__when">Sep 2025–Feb 2026</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Data Structures and Algorithms</span><span class="course__who">Dr. Ahmad-Ali Abin</span><span class="course__when">Sep 2025–Feb 2026</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Programming</span><span class="course__who">Dr. Zeinab Pourbafarani</span><span class="course__when">Sep 2025–Feb 2026</span></li>
-            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Programming <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Mahdi Mojahedi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Dara Rahmati</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+        <div class="uni" data-inst="sbu">
+          <h3 class="uni__title"><span>Shahid Beheshti University</span><span class="uni__count">19 sections</span></h3>
+          <ul class="uni__rows">
+            <li><span class="course">Principles of Design and Analysis of Experiments <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Narjes Soltani Dehaghani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Signals and Systems and Digital Control <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Zeinab Pourbafarani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Database</span><span class="course__who">Dr. Hassan Haghighi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Engineering Probability and Statistics <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Narjes Soltani Dehaghani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Blockchain Technology <em class="tag">Graduate</em></span><span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li><span class="course">Blockchain Technology <em class="tag">Graduate</em></span><span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li><span class="course">Linear Algebra <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Farokhlagha Moazami Goodarzi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li><span class="course">Fundamentals of Data Mining <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Ahmad-Ali Abin</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li><span class="course">Advanced Programming</span><span class="course__who">Dr. Mojtaba Vahidi Asl</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li><span class="course">Data Structures and Algorithms</span><span class="course__who">Dr. Ahmad-Ali Abin</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li><span class="course">Fundamentals of Programming</span><span class="course__who">Dr. Zeinab Pourbafarani</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li><span class="course">Fundamentals of Programming <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Mahdi Mojahedi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li><span class="course">Computer Architecture</span><span class="course__who">Dr. Dara Rahmati</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li><span class="course">Formal Languages and Automata Theory</span><span class="course__who">Dr. Ramak Ghavami Zadeh</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Computer Architecture</span><span class="course__who">Dr. Razieh Salarifard</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Advanced Programming</span><span class="course__who">Dr. Sadegh Aliakbari</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Advanced Programming</span><span class="course__who">Dr. Mojtaba Vahidi Asl</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Fundamentals of Programming</span><span class="course__who">Dr. Monireh Abdoos</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li><span class="course">Applied Computer Skills</span><span class="course__who">Dr. Hamed Malek</span><span class="course__when">Sep 2024–Jan 2025</span></li>
           </ul>
         </div>
-
-        <div class="term" data-term="t2">
-          <h3 class="term__title">Jan–Jun 2025 <span class="term__count">8 sections</span></h3>
-          <ul class="term__rows">
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Jan–Jun 2025</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Ms. Marziyeh Sadri</span><span class="course__when">Jan–Jun 2025</span></li>
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Zarei</span><span class="course__when">Jan–Jun 2025</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Formal Languages and Automata Theory</span><span class="course__who">Dr. Ramak Ghavami Zadeh</span><span class="course__when">Jan–Jun 2025</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Razieh Salarifard</span><span class="course__when">Jan–Jun 2025</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Advanced Programming</span><span class="course__who">Dr. Sadegh Aliakbari</span><span class="course__when">Jan–Jun 2025</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Advanced Programming</span><span class="course__who">Dr. Mojtaba Vahidi Asl</span><span class="course__when">Jan–Jun 2025</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Programming</span><span class="course__who">Dr. Monireh Abdoos</span><span class="course__when">Jan–Jun 2025</span></li>
-          </ul>
-        </div>
-
-        <div class="term" data-term="t1">
-          <h3 class="term__title">Sep 2024–Jan 2025 <span class="term__count">2 sections</span></h3>
-          <ul class="term__rows">
-            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Nazari</span><span class="course__when">Sep 2024–Jan 2025</span></li>
-            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Applied Computer Skills</span><span class="course__who">Dr. Hamed Malek</span><span class="course__when">Sep 2024–Jan 2025</span></li>
-          </ul>
-        </div>
-        <p class="explorer__empty" id="teachEmpty" hidden>No sections match this combination of filters.</p>
       </div>
 
       <div class="workshop sec-body reveal" data-reveal>
@@ -615,7 +593,7 @@
     </section>
 
     <section class="section" id="studio" aria-labelledby="studio-title">
-      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">06</span><span class="sec-mark__label">Projects</span><span class="sec-mark__track"><i></i></span></div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">07</span><span class="sec-mark__label">Projects</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head">
         <p class="sec-head__label">Course projects</p>
         <h2 id="studio-title">From game trees to a pipelined processor</h2>
@@ -656,7 +634,7 @@
     </section>
 
     <section class="section" id="toolkit" aria-labelledby="toolkit-title">
-      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">07</span><span class="sec-mark__label">Methods</span><span class="sec-mark__track"><i></i></span></div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">08</span><span class="sec-mark__label">Methods</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head">
         <p class="sec-head__label">Methods &amp; tools</p>
         <h2 id="toolkit-title">What the work is built with</h2>
@@ -682,7 +660,7 @@
     </section>
 
     <section class="section" id="recognition" aria-labelledby="recognition-title">
-      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">08</span><span class="sec-mark__label">Recognition</span><span class="sec-mark__track"><i></i></span></div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">09</span><span class="sec-mark__label">Recognition</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head">
         <p class="sec-head__label">Recognition</p>
         <h2 id="recognition-title">Distinctions, schools, and meetings</h2>
@@ -715,7 +693,7 @@
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="contact__frame reveal" data-reveal>
         <div class="contact__intro">
-          <p class="contact__label"><span>09</span>Correspondence</p>
+          <p class="contact__label"><span>10</span>Correspondence</p>
           <h2 id="contact-title">Write to me</h2>
           <p>
             Questions about the work, and proposals for collaboration, are welcome.

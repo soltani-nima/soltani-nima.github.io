@@ -337,7 +337,7 @@
         const y0 = rowH * (i + 0.64);
         const amp = rowH * 0.28;
         const on = topic === "all" || c.topics.includes(topic);
-        const hot = topic === "all" ? c.topics.includes("brain") : on;
+        const hot = topic !== "all" && on;
         const stroke = hot ? colors.signal : colors.ink;
         ctx.globalAlpha = on ? 1 : 0.18;
 

@@ -1223,7 +1223,7 @@ p, dd, li { text-wrap: pretty; }
   .langs__name { font-size: 1.2rem; }
 }
 
-/* Workshops, lectures, service */
+/* Workshops and service */
 .outreach { display: grid; gap: clamp(2rem, 4vw, 2.8rem); }
 .outreach__group { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: clamp(1rem, 3vw, 2rem); border-top: 1.5px solid var(--ink); }
 .outreach__type {
@@ -1242,8 +1242,7 @@ p, dd, li { text-wrap: pretty; }
   padding: 1.05rem 1.3rem 1.25rem 0;
   border-bottom: 1px solid var(--line);
 }
-.talks:not(.talks--wide) .talk:nth-child(2n) { padding-left: 1.3rem; padding-right: 0; border-left: 1px solid var(--line); }
-.talks--wide { grid-template-columns: minmax(0, 1fr); }
+.talk:nth-child(2n) { padding-left: 1.3rem; padding-right: 0; border-left: 1px solid var(--line); }
 .talk::after {
   content: "";
   position: absolute;
@@ -1258,7 +1257,6 @@ p, dd, li { text-wrap: pretty; }
 }
 .talk:hover::after { transform: scaleX(1); }
 .talk__course { margin: 0 0 0.4rem; color: var(--accent); font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; line-height: 1.5; text-transform: uppercase; }
-.talk__level { margin-left: 0.35rem; padding: 0.05rem 0.4rem; border: 1px solid var(--line-2); color: var(--muted); font-size: 0.6rem; letter-spacing: 0.08em; white-space: nowrap; }
 .talk h4 { margin: 0 0 0.35rem; font-family: var(--display); font-size: 1.18rem; font-weight: 500; line-height: 1.25; }
 .talk p:last-child { margin: 0; max-width: 40rem; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
 .talk code { font-family: var(--mono); font-size: 0.82em; color: var(--ink-2); }
@@ -1279,7 +1277,7 @@ p, dd, li { text-wrap: pretty; }
   .outreach__type { padding: 0.9rem 0 0.2rem; }
   .talks,
   .service { grid-template-columns: minmax(0, 1fr); }
-  .talks:not(.talks--wide) .talk:nth-child(2n) { padding-left: 0; border-left: 0; }
+  .talk:nth-child(2n) { padding-left: 0; border-left: 0; }
   .talk { padding-right: 0; }
 }
 
@@ -1313,18 +1311,29 @@ p, dd, li { text-wrap: pretty; }
   padding: clamp(2rem, 5vw, 4rem);
   background-color: var(--inv-bg);
   background-image:
-    linear-gradient(rgba(238, 241, 242, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(238, 241, 242, 0.035) 1px, transparent 1px);
-  background-size: 32px 32px;
+    radial-gradient(120% 90% at 0% 100%, rgba(0, 0, 0, 0.35), transparent 60%),
+    radial-gradient(70% 80% at 82% 30%, rgba(127, 207, 198, 0.07), transparent 70%),
+    url("../assets/contours.svg");
+  background-size: auto, auto, cover;
+  background-position: center, center, right center;
+  background-repeat: no-repeat;
   color: var(--inv-ink);
   overflow: hidden;
+  isolation: isolate;
+}
+.contact__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
 }
 :root[data-theme="dark"] .contact__frame { border: 1px solid var(--line); }
 .contact__frame::before { content: ""; position: absolute; top: 0; left: clamp(2rem, 5vw, 4rem); width: 4rem; height: 3px; background: var(--inv-signal); }
-.contact__label { display: flex; gap: 0.8rem; margin: 0 0 0.8rem; color: var(--inv-accent); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
-.contact__label span { color: var(--inv-signal); }
 .contact__intro h2 { margin-bottom: 1rem; font-size: clamp(2.4rem, 5.4vw, 4rem); }
-.contact__intro > p:not(.contact__label) { margin: 0; color: var(--inv-muted); max-width: 30rem; }
+.contact__intro > p { margin: 0; color: var(--inv-muted); max-width: 30rem; }
 .contact__facts { display: flex; flex-wrap: wrap; gap: 1rem 2.4rem; margin-top: 2rem; }
 .contact__facts dt { color: var(--inv-muted); font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .contact__facts dd { margin-top: 0.2rem; font-family: var(--display); font-size: 1.2rem; font-variant-numeric: tabular-nums; }
@@ -1333,7 +1342,7 @@ p, dd, li { text-wrap: pretty; }
 .channel {
   position: relative;
   display: grid;
-  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
   gap: 1rem;
   align-items: baseline;
   padding: 1.15rem 0;
@@ -1363,21 +1372,6 @@ p, dd, li { text-wrap: pretty; }
   transition: color 0.25s var(--ease);
 }
 .channel__value:hover { color: var(--inv-accent); }
-.channel__copy {
-  min-width: 5.8rem;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid rgba(238, 241, 242, 0.22);
-  background: transparent;
-  color: var(--inv-muted);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: color 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
-}
-.channel__copy:hover { color: #fff; border-color: rgba(238, 241, 242, 0.5); }
-.channel__copy.is-done { background: var(--inv-accent); border-color: var(--inv-accent); color: #11161b; }
 .contact__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.8rem; }
 .contact-cv {
   display: inline-flex;
@@ -1507,8 +1501,7 @@ p, dd, li { text-wrap: pretty; }
   .contact { padding-left: 0; padding-right: 0; }
   .contact__frame { padding: 2.2rem 1.2rem; }
   .contact__frame::before { left: 1.2rem; }
-  .channel { grid-template-columns: minmax(0, 1fr) auto; row-gap: 0.25rem; }
-  .channel__label { grid-column: 1 / -1; }
+  .channel { grid-template-columns: minmax(0, 1fr); row-gap: 0.25rem; }
   .channel__value { font-size: 1.12rem; }
 }
 
@@ -1535,7 +1528,7 @@ p, dd, li { text-wrap: pretty; }
   body { background: #fff; color: #000; line-height: 1.45; }
   body::before,
   .progress, .site-header, .hero__cta, .instrument, .hero::before, .areas__tabs,
-  .channel__copy, .skip-link, .contact-cv--ghost, .focus__fig, .sec-mark__track, .site-footer a { display: none !important; }
+  .skip-link, .contact-cv--ghost, .focus__fig, .sec-mark__track, .site-footer a { display: none !important; }
   .js .reveal,
   .js .sec-head h2 { opacity: 1 !important; transform: none !important; clip-path: none !important; }
   .section::before, .section::after { transform: none !important; }

@@ -180,42 +180,6 @@
     selectArea(0);
   }
 
-  /* Copy contact details */
-  const copyStatus = document.getElementById("copyStatus");
-  const selectValue = (button) => {
-    const value = button.parentElement?.querySelector(".channel__value");
-    if (!value) return;
-    const range = document.createRange();
-    range.selectNodeContents(value);
-    const sel = window.getSelection();
-    sel?.removeAllRanges();
-    sel?.addRange(range);
-  };
-  const flash = (button, label, done) => {
-    clearTimeout(button._t);
-    button.textContent = label;
-    button.classList.toggle("is-done", done);
-    button._t = setTimeout(() => {
-      button.textContent = "Copy";
-      button.classList.remove("is-done");
-    }, 1800);
-  };
-  document.querySelectorAll("[data-copy]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const text = button.dataset.copy || "";
-      try {
-        if (!navigator.clipboard || !window.isSecureContext) throw new Error("no clipboard");
-        await navigator.clipboard.writeText(text);
-        flash(button, "Copied", true);
-        if (copyStatus) copyStatus.textContent = `Copied ${text}`;
-      } catch {
-        selectValue(button);
-        flash(button, "Selected", false);
-        if (copyStatus) copyStatus.textContent = `${text} selected; press Ctrl+C to copy`;
-      }
-    });
-  });
-
   /* Local time in Tehran */
   const clock = document.getElementById("localTime");
   if (clock && window.Intl) {

@@ -464,4 +464,21 @@
       }
     });
   }
+
+  const tagRows = [...document.querySelectorAll(".stack__tags")];
+  const syncTagRows = () => {
+    tagRows.forEach((row) => {
+      if (row.scrollWidth > row.clientWidth + 1) {
+        row.tabIndex = 0;
+        row.setAttribute("role", "region");
+        row.setAttribute("aria-label", row.previousElementSibling.textContent);
+      } else {
+        row.removeAttribute("tabindex");
+        row.removeAttribute("role");
+        row.removeAttribute("aria-label");
+      }
+    });
+  };
+  syncTagRows();
+  window.addEventListener("resize", syncTagRows);
 })();

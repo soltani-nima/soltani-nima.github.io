@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nima Soltani · Learning and decision-making from structured signals</title>
-  <meta name="description" content="Nima Soltani studies computer engineering at Shahid Beheshti University and works with research groups at IPM and SBU on reinforcement learning for markets, physics-informed networks, MEG studies of vision, action, and deception, and blockchain protocols." />
+  <meta name="description" content="Nima Soltani is a B.Sc. student in Computer Engineering at Shahid Beheshti University and a research assistant at the Institute for Research in Fundamental Sciences (IPM), working on reinforcement learning for markets, physics-informed networks, MEG studies of vision, action, and deception, and blockchain protocols." />
   <meta name="author" content="Nima Soltani" />
   <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0d1115" media="(prefers-color-scheme: dark)" />
@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Nima Soltani" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Nima Soltani · Learning and decision-making from structured signals" />
-  <meta property="og:description" content="Reinforcement learning for markets, physics-informed networks, MEG studies of vision, action, and deception, and blockchain protocols. Research at IPM and Shahid Beheshti University." />
+  <meta property="og:description" content="Reinforcement learning for markets, physics-informed networks, MEG studies of vision, action, and deception, and blockchain protocols. B.Sc. student at Shahid Beheshti University; research assistant at IPM." />
   <meta property="og:url" content="https://soltani-nima.github.io/" />
   <meta property="profile:first_name" content="Nima" />
   <meta property="profile:last_name" content="Soltani" />
@@ -114,7 +114,10 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-name">
-      <p class="hero__eyebrow reveal" data-reveal><span>Computer Engineering</span> <span>· Shahid Beheshti University</span> <span>· IPM · Tehran</span></p>
+      <ul class="hero__eyebrow reveal" data-reveal aria-label="Affiliations">
+        <li><span class="hero__role">B.Sc. Computer Engineering</span> <span class="hero__org">Shahid Beheshti University, Tehran</span></li>
+        <li><span class="hero__role">Research Assistant</span> <span class="hero__org">Institute for Research in Fundamental Sciences (IPM)</span></li>
+      </ul>
       <h1 id="hero-name" class="hero__name reveal" data-reveal>Nima <em>Soltani</em></h1>
 
       <div class="hero__text">
@@ -137,17 +140,11 @@
         </p>
       </div>
 
-      <figure class="instrument reveal" data-reveal>
-        <div class="instrument__bar">
-          <span>Eight channels, one decision boundary</span>
-          <button class="instrument__pause" id="signalPause" type="button" aria-pressed="false">Pause</button>
+      <figure class="instrument reveal" data-reveal role="img" aria-label="Illustrative synthetic traces of five kinds of signal (price, news text, PDE residual, MEG, transactions) approaching a decision boundary. No real data are shown.">
+        <div class="instrument__bar" aria-hidden="true">
+          <span>Five channels, one decision boundary</span>
         </div>
         <canvas id="signals" aria-hidden="true"></canvas>
-        <figcaption>
-          Synthetic traces of the kinds of signal the work learns from, from market prices to MEG
-          and on-chain transactions. A decision has to be made at the edge marked <i>now</i>,
-          before the hatched region is observed. Illustrative only; no data are shown.
-        </figcaption>
       </figure>
 
       <dl class="glance reveal" data-reveal>

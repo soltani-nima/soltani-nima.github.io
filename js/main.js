@@ -280,7 +280,6 @@
 
   /* Hero instrument: synthetic channels scrolling toward a decision edge */
   const canvas = document.getElementById("signals");
-  const pauseBtn = document.getElementById("signalPause");
   if (canvas && canvas.getContext) {
     const ctx = canvas.getContext("2d");
     const N = 220;
@@ -290,39 +289,26 @@
     };
     const clamp = (v) => Math.max(-1, Math.min(1, v));
     let k = 0;
-    const st = { x: 0, target: 0, hold: 0, burst: 0, len: 0 };
+    const st = { x: 0, burst: 0, len: 0 };
     const channels = [
-      { label: "price", topic: "markets", next: () => (st.x = st.x * 0.985 + 0.11 * gauss(), Math.tanh(st.x)) },
+      { label: "price", topics: ["markets", "structure"], next: () => (st.x = st.x * 0.985 + 0.11 * gauss(), Math.tanh(st.x)) },
+      { label: "news text", topics: ["markets"], next: (prev) => clamp(prev * 0.84 + (Math.random() < 0.035 ? (Math.random() < 0.5 ? -1 : 1) * (0.5 + Math.random() * 0.5) : 0) + 0.03 * gauss()) },
+      { label: "PDE residual", topics: ["physics"], next: () => 0.8 * Math.sin(k * 0.11) * (0.55 + 0.45 * Math.sin(k * 0.017)) },
       {
-        label: "fundamentals",
-        topic: "markets",
-        next(prev) {
-          if (--st.hold <= 0) {
-            st.target = (Math.random() * 2 - 1) * 0.75;
-            st.hold = 40 + Math.random() * 60;
-          }
-          return prev + (st.target - prev) * 0.07;
-        },
-      },
-      { label: "news text", topic: "markets", next: (prev) => clamp(prev * 0.84 + (Math.random() < 0.035 ? (Math.random() < 0.5 ? -1 : 1) * (0.5 + Math.random() * 0.5) : 0) + 0.03 * gauss()) },
-      { label: "co-movement", topic: "structure", next: (prev) => clamp(prev * 0.86 + 0.14 * (0.85 * Math.tanh(st.x) + 0.3 * gauss())) },
-      { label: "PDE residual", topic: "physics", next: () => 0.8 * Math.sin(k * 0.11) * (0.55 + 0.45 * Math.sin(k * 0.017)) },
-      { label: "MEG \u00b7 occipital", topic: "brain", next: () => clamp(0.55 * Math.sin(k * 0.9) * (0.5 + 0.5 * Math.sin(k * 0.031)) + 0.12 * gauss()) },
-      {
-        label: "MEG \u00b7 motor",
-        topic: "brain",
+        label: "MEG",
+        topics: ["brain"],
         next() {
-          let v = 0.1 * gauss();
+          let v = 0.45 * Math.sin(k * 0.9) * (0.5 + 0.5 * Math.sin(k * 0.031)) + 0.1 * gauss();
           if (st.burst > 0) {
-            v += 0.75 * Math.sin(k * 1.7) * Math.sin((Math.PI * st.burst) / st.len);
+            v += 0.5 * Math.sin(k * 1.7) * Math.sin((Math.PI * st.burst) / st.len);
             st.burst -= 1;
-          } else if (Math.random() < 0.02) {
+          } else if (Math.random() < 0.015) {
             st.len = st.burst = 25 + Math.floor(Math.random() * 20);
           }
           return clamp(v);
         },
       },
-      { label: "transactions", topic: "chain", bars: true, next: () => (k % 11 === 0 ? 0.25 + Math.random() * 0.75 : 0) },
+      { label: "transactions", topics: ["chain"], bars: true, next: () => (k % 11 === 0 ? 0.25 + Math.random() * 0.75 : 0) },
     ];
     const buffers = channels.map(() => new Float32Array(N));
     const step = () => {
@@ -382,9 +368,9 @@
       ctx.textBaseline = "top";
       channels.forEach((c, i) => {
         const y0 = rowH * (i + 0.64);
-        const amp = rowH * 0.32;
-        const on = topic === "all" || c.topic === topic;
-        const hot = topic === "all" ? c.topic === "brain" : c.topic === topic;
+        const amp = rowH * 0.28;
+        const on = topic === "all" || c.topics.includes(topic);
+        const hot = topic === "all" ? c.topics.includes("brain") : on;
         const stroke = hot ? colors.signal : colors.ink;
         ctx.globalAlpha = on ? 1 : 0.18;
 
@@ -451,7 +437,7 @@
     let raf = 0;
     let running = false;
     let visible = true;
-    let paused = reducedMotion.matches;
+    let still = reducedMotion.matches;
 
     const frame = (now) => {
       acc += Math.min(200, now - last);
@@ -464,7 +450,7 @@
       raf = requestAnimationFrame(frame);
     };
     const start = () => {
-      if (running || paused || !visible || document.hidden) return;
+      if (running || still || !visible || document.hidden) return;
       running = true;
       last = performance.now();
       raf = requestAnimationFrame(frame);
@@ -473,25 +459,11 @@
       running = false;
       cancelAnimationFrame(raf);
     };
-    const syncPause = () => {
-      if (!pauseBtn) return;
-      pauseBtn.textContent = paused ? "Play" : "Pause";
-      pauseBtn.setAttribute("aria-pressed", paused ? "true" : "false");
-      pauseBtn.setAttribute("aria-label", paused ? "Play the signal animation" : "Pause the signal animation");
-    };
-
     readColors();
     resize();
     draw(0);
-    syncPause();
     start();
 
-    pauseBtn?.addEventListener("click", () => {
-      paused = !paused;
-      syncPause();
-      if (paused) stop();
-      else start();
-    });
     themeListeners.push(() => {
       readColors();
       if (!running) draw(0);
@@ -516,11 +488,12 @@
     }
     document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
     reducedMotion.addEventListener?.("change", () => {
-      if (reducedMotion.matches) {
-        paused = true;
+      still = reducedMotion.matches;
+      if (still) {
         stop();
-        syncPause();
         draw(0);
+      } else {
+        start();
       }
     });
   }

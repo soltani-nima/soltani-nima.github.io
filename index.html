@@ -236,13 +236,7 @@
       <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">03</span><span class="sec-mark__label">Research</span><span class="sec-mark__track"><i></i></span></div>
       <header class="sec-head">
         <p class="sec-head__label">Research</p>
-        <h2 id="themes-title">One program, many kinds of structure</h2>
-        <p class="sec-head__frame">
-          Each line of work asks what structure a signal carries, and how a learning system
-          should use it when outcomes are uncertain: the fundamentals and relations behind a price,
-          the equation behind a field, the swing of a generator after a fault, the dynamics of
-          cortex, the rules of a protocol.
-        </p>
+        <h2 id="themes-title">Research areas and open questions</h2>
       </header>
 
       <div class="areas sec-bleed reveal" data-reveal>
@@ -257,7 +251,6 @@
         <div class="areas__panels">
         <article class="focus area is-active" id="area-vision" aria-labelledby="area-vision-title">
           <div class="focus__text">
-            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Current research focus · Neuroscience</p>
             <h3 id="area-vision-title">Vision, action, and deception</h3>
             <p class="focus__lead">
               Perception and action are usually studied apart, yet every reach is planned from what the eyes report, and every movement changes what is seen next. Deception strains that loop. An actor can shape a movement to hide its goal; an observer has to infer the goal from the movement alone. The questions I am working toward:
@@ -296,7 +289,6 @@
         </article>
         <article class="focus area" id="area-markets" aria-labelledby="area-markets-title">
           <div class="focus__text">
-            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Markets · IPM</p>
             <h3 id="area-markets-title">Trading agents that read the whole market</h3>
             <p class="focus__lead">
               Prices are only part of what moves a market. Company fundamentals, the language of financial news, and the way assets move together all carry information. This line builds deep reinforcement-learning agents that take those signals in together, with graph and hypergraph neural networks modelling the relations among assets inside the agent rather than as features added afterwards. It underlies papers [1] and [2]. The directions:
@@ -307,9 +299,7 @@
             <li>How can graph and hypergraph networks capture co-movement and group structure among assets in a form the agent can use when it allocates a portfolio?</li>
             </ol>
             <div class="focus__foot">
-              <p class="focus__meta"><span>Deep RL</span><span>PPO</span><span>Diffusion policies</span><span>Multimodal fusion</span><span>FinBERT</span><span>xLSTM</span><span>Graph &amp; hypergraph networks</span></p>
-            <p class="focus__refs"><span>Related</span><a href="#pub-1">[1]</a><a href="#pub-2">[2]</a><a href="#appt-ipm">IPM appointment</a></p>
-            </div>
+              <p class="focus__meta"><span>Deep RL</span><span>PPO</span><span>Diffusion policies</span><span>Multimodal fusion</span><span>FinBERT</span><span>xLSTM</span><span>Graph &amp; hypergraph networks</span></p>            </div>
           </div>
           <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">
@@ -340,7 +330,6 @@
         </article>
         <article class="focus area" id="area-physics" aria-labelledby="area-physics-title">
           <div class="focus__text">
-            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Physics-informed learning · IPM</p>
             <h3 id="area-physics-title">Networks bound by their equations</h3>
             <p class="focus__lead">
               A network fitted only to data can match its samples while breaking the physics that produced them. Physics-informed learning puts the governing equations into training. In PG-KINN [4], a Petrov–Galerkin weak formulation is paired with Kolmogorov–Arnold networks, whose learnable univariate functions replace fixed activations, to solve forward and inverse PDE problems in one framework. The same idea, applied to operators, carries the power-systems work [3]. The directions:
@@ -351,9 +340,7 @@
             <li>How can one framework solve the forward problem and recover unknown coefficients in the inverse problem without separate machinery for each?</li>
             </ol>
             <div class="focus__foot">
-              <p class="focus__meta"><span>PINNs</span><span>Kolmogorov–Arnold networks</span><span>Petrov–Galerkin</span><span>Weak formulation</span><span>Inverse problems</span></p>
-            <p class="focus__refs"><span>Related</span><a href="#pub-4">[4]</a><a href="#pub-3">[3]</a><a href="#appt-ipm">IPM appointment</a></p>
-            </div>
+              <p class="focus__meta"><span>PINNs</span><span>Kolmogorov–Arnold networks</span><span>Petrov–Galerkin</span><span>Weak formulation</span><span>Inverse problems</span></p>            </div>
           </div>
           <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">
@@ -387,7 +374,6 @@
         </article>
         <article class="focus area" id="area-energy" aria-labelledby="area-energy-title">
           <div class="focus__text">
-            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Energy · IPM</p>
             <h3 id="area-energy-title">Fast, physics-consistent power-system dynamics</h3>
             <p class="focus__lead">
               After a disturbance, whether a generator stays in step with the grid is decided in the first seconds of its swing. Checking that across many operating conditions means solving the same equations again and again. Paper [3] learns those solutions as an operator: a physics-informed DeepONet for the classical swing dynamics of a single-machine infinite-bus system, trained to respect the swing equation and its initial state. The directions:
@@ -398,9 +384,7 @@
             <li>What would it take to extend such surrogates from the classical single-machine model toward richer machine models and multi-machine systems?</li>
             </ol>
             <div class="focus__foot">
-              <p class="focus__meta"><span>Power systems</span><span>Transient stability</span><span>Swing equation</span><span>DeepONet</span><span>Surrogate modelling</span></p>
-            <p class="focus__refs"><span>Related</span><a href="#pub-3">[3]</a><a href="#appt-ipm">IPM appointment</a></p>
-            </div>
+              <p class="focus__meta"><span>Power systems</span><span>Transient stability</span><span>Swing equation</span><span>DeepONet</span><span>Surrogate modelling</span></p>            </div>
           </div>
           <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">
@@ -426,7 +410,6 @@
         </article>
         <article class="focus area" id="area-brain" aria-labelledby="area-brain-title">
           <div class="focus__text">
-            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Brain signals · Shahid Beheshti University</p>
             <h3 id="area-brain-title">From raw MEG to decodable signal</h3>
             <p class="focus__lead">
               Magnetoencephalography records the brain&rsquo;s magnetic fields with millisecond precision, but what reaches the sensors is a mixture of sources, noise, and artefacts. At Shahid Beheshti University, this work builds the path from raw recordings to interpretable signal for studying visual perception and cognitive processing. The directions:
@@ -437,9 +420,7 @@
             <li>What do spectral and time–frequency analyses, together with decoding models, reveal about when and where perceptual information is represented?</li>
             </ol>
             <div class="focus__foot">
-              <p class="focus__meta"><span>MEG</span><span>Preprocessing</span><span>Source localization</span><span>Neural decoding</span><span>Time–frequency analysis</span></p>
-            <p class="focus__refs"><span>Related</span><a href="#appt-neuro">Neuroscience appointment</a></p>
-            </div>
+              <p class="focus__meta"><span>MEG</span><span>Preprocessing</span><span>Source localization</span><span>Neural decoding</span><span>Time–frequency analysis</span></p>            </div>
           </div>
           <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">
@@ -467,7 +448,6 @@
         </article>
         <article class="focus area" id="area-chain" aria-labelledby="area-chain-title">
           <div class="focus__text">
-            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Protocols · Shahid Beheshti University</p>
             <h3 id="area-chain-title">Systems that must hold against adversaries</h3>
             <p class="focus__lead">
               A blockchain is a protocol that has to keep working while some participants try to break it. At Shahid Beheshti University, I study Ethereum from that angle: how consensus and protocol rules shape what transactions can do, how on-chain activity can be modelled, and where smart contracts and DeFi infrastructure are exposed. The directions:
@@ -478,9 +458,7 @@
             <li>Which classes of vulnerability recur in Solidity smart contracts and DeFi protocols, and how can analysis and careful design catch them before deployment?</li>
             </ol>
             <div class="focus__foot">
-              <p class="focus__meta"><span>Ethereum</span><span>Consensus</span><span>Transaction modelling</span><span>Solidity</span><span>Smart-contract security</span><span>DeFi</span></p>
-            <p class="focus__refs"><span>Related</span><a href="#appt-chain">Blockchain appointment</a></p>
-            </div>
+              <p class="focus__meta"><span>Ethereum</span><span>Consensus</span><span>Transaction modelling</span><span>Solidity</span><span>Smart-contract security</span><span>DeFi</span></p>            </div>
           </div>
           <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">

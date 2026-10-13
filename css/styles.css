@@ -621,18 +621,6 @@ p, dd, li { text-wrap: pretty; }
 }
 .focus:hover::before { width: 9rem; }
 
-.focus__kicker {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 0.9rem;
-  color: var(--inv-signal);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.focus__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--inv-signal); box-shadow: 0 0 0 4px rgba(255, 138, 107, 0.18); }
 .focus h3 {
   margin: 0 0 1rem;
   font-family: var(--display);
@@ -690,10 +678,6 @@ p, dd, li { text-wrap: pretty; }
 .loop__trace { fill: none; stroke: var(--inv-accent); stroke-width: 1.3; stroke-linejoin: round; stroke-dasharray: 700; stroke-dashoffset: 0; }
 .js .focus.reveal .loop__trace { stroke-dashoffset: 700; transition: stroke-dashoffset 2.6s var(--ease-out) 0.3s; }
 .js .focus.reveal.is-visible .loop__trace { stroke-dashoffset: 0; }
-.focus__refs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.85rem; margin: 0; color: var(--inv-muted); font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.04em; }
-.focus__refs span { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.6rem; }
-.focus__refs a { color: var(--inv-accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--t) var(--ease); }
-.focus__refs a:hover { border-bottom-color: currentColor; }
 .sch__frame { fill: none; stroke: var(--inv-muted); stroke-width: 1.2; }
 .sch__soft { fill: none; stroke: rgba(238, 241, 242, 0.2); stroke-width: 1; }
 .sch__soft--strong { stroke: rgba(127, 207, 198, 0.55); stroke-width: 1.2; }

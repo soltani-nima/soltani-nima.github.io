@@ -186,37 +186,50 @@
         <h2 id="education-title">Academic record</h2>
       </header>
       <ol class="edu-line sec-body reveal" data-reveal>
-        <li class="edu edu--now">
-          <p class="edu__when"><time datetime="2023">2023</time>–present</p>
-          <div>
-            <h3>B.Sc. Computer Engineering</h3>
-            <p class="edu__where">Shahid Beheshti University, Tehran</p>
-            <p class="edu__meta"><span>GPA 3.61 / 4</span></p>
+        <li class="edu edu--now" style="--i: 0">
+          <p class="edu__when"><time datetime="2023">2023</time><span class="edu__dash">–</span><span class="edu__present">present</span></p>
+          <div class="edu__body">
+            <h3 class="edu__org">Shahid Beheshti University</h3>
+            <p class="edu__what">B.Sc. Computer Engineering <span aria-hidden="true">·</span> Tehran</p>
+          </div>
+          <div class="gpa" style="--v: 0.9025">
+            <p class="gpa__text"><span class="gpa__k">GPA</span> <span class="gpa__v">3.61</span> <span class="gpa__of">/ 4</span></p>
+            <span class="gpa__bar" aria-hidden="true"></span>
           </div>
         </li>
         <li class="edu-group">
-          <p class="edu-group__label">Sampad, National Organization for Development of Exceptional Talents · Zanjan</p>
+          <div class="edu-group__head" style="--i: 1">
+            <div class="edu__body">
+              <p class="edu-group__eyebrow">National Organization for Development of Exceptional Talents</p>
+              <h3 class="edu__org">Sampad <span class="edu-group__city"><span aria-hidden="true">·</span> Zanjan</span></h3>
+            </div>
+          </div>
           <ol>
-            <li class="edu">
-              <p class="edu__when"><time datetime="2020">2020</time>–<time datetime="2023">2023</time></p>
-              <div>
-                <h3>Diploma in Mathematics &amp; Physics</h3>
-                <p class="edu__where">High school</p>
-                <p class="edu__meta"><span>GPA 3.88 / 4</span><span>Top 0.2% · National University Entrance Exam</span></p>
+            <li class="edu" style="--i: 2">
+              <p class="edu__when"><time datetime="2020">2020</time><span class="edu__dash">–</span><time datetime="2023">2023</time></p>
+              <div class="edu__body">
+                <h4 class="edu__level">Diploma in Mathematics &amp; Physics</h4>
+                <p class="edu__what">High school</p>
+                <p class="edu__honour">Top 0.2% <span aria-hidden="true">·</span> National University Entrance Exam</p>
+              </div>
+              <div class="gpa" style="--v: 0.97">
+                <p class="gpa__text"><span class="gpa__k">GPA</span> <span class="gpa__v">3.88</span> <span class="gpa__of">/ 4</span></p>
+                <span class="gpa__bar" aria-hidden="true"></span>
               </div>
             </li>
-            <li class="edu">
-              <p class="edu__when"><time datetime="2017">2017</time>–<time datetime="2020">2020</time></p>
-              <div>
-                <h3>Middle school</h3>
-                <p class="edu__where">Same school</p>
-                <p class="edu__meta"><span>GPA 20 / 20</span></p>
+            <li class="edu edu--last" style="--i: 3">
+              <p class="edu__when"><time datetime="2017">2017</time><span class="edu__dash">–</span><time datetime="2020">2020</time></p>
+              <div class="edu__body">
+                <h4 class="edu__level">Middle school</h4>
+              </div>
+              <div class="gpa" style="--v: 1">
+                <p class="gpa__text"><span class="gpa__k">GPA</span> <span class="gpa__v">20</span> <span class="gpa__of">/ 20</span></p>
+                <span class="gpa__bar" aria-hidden="true"></span>
               </div>
             </li>
           </ol>
         </li>
       </ol>
-      </div>
     </section>
 
     <section class="section" id="themes" aria-labelledby="themes-title">

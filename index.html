@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nima Soltani · Learning and decision-making from structured signals</title>
-  <meta name="description" content="Nima Soltani is a B.Sc. student in Computer Engineering at Shahid Beheshti University and a research assistant at the Institute for Research in Fundamental Sciences (IPM), working on reinforcement learning for markets, physics-informed networks and operators, MEG analysis, blockchain protocols, and the intersection of vision and action." />
+  <meta name="description" content="Nima Soltani is a B.Sc. student in Computer Engineering at Shahid Beheshti University and a research assistant at the Institute for Research in Fundamental Sciences (IPM), working on reinforcement learning for markets, physics-informed networks and operators, power-system dynamics, MEG analysis, blockchain protocols, and the intersection of vision and action." />
   <meta name="author" content="Nima Soltani" />
   <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0d1115" media="(prefers-color-scheme: dark)" />
@@ -15,13 +15,13 @@
   <meta property="og:site_name" content="Nima Soltani" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Nima Soltani · Learning and decision-making from structured signals" />
-  <meta property="og:description" content="Reinforcement learning for markets, physics-informed networks and operators, MEG analysis, blockchain protocols, and research on vision, action, and deception. B.Sc. student at Shahid Beheshti University; research assistant at IPM." />
+  <meta property="og:description" content="Reinforcement learning for markets, physics-informed networks and operators, power-system dynamics, MEG analysis, blockchain protocols, and research on vision, action, and deception. B.Sc. student at Shahid Beheshti University; research assistant at IPM." />
   <meta property="og:url" content="https://soltani-nima.github.io/" />
   <meta property="profile:first_name" content="Nima" />
   <meta property="profile:last_name" content="Soltani" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Nima Soltani · Learning and decision-making from structured signals" />
-  <meta name="twitter:description" content="Reinforcement learning for markets, physics-informed networks and operators, MEG analysis, blockchain protocols, and vision and action." />
+  <meta name="twitter:description" content="Reinforcement learning for markets, physics-informed networks and operators, power-system dynamics, MEG analysis, blockchain protocols, and vision and action." />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon.ico" sizes="32x32" />
@@ -55,7 +55,7 @@
       { "@type": "ResearchOrganization", "name": "Institute for Research in Fundamental Sciences (IPM)" }
     ],
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Shahid Beheshti University" },
-    "knowsAbout": ["Deep reinforcement learning", "Multimodal learning", "Physics-informed neural networks", "Neural operators", "Graph neural networks", "MEG signal processing", "Blockchain systems"],
+    "knowsAbout": ["Deep reinforcement learning", "Multimodal learning", "Physics-informed neural networks", "Neural operators", "Power-system dynamics", "Graph neural networks", "MEG signal processing", "Blockchain systems"],
     "sameAs": [
       "https://scholar.google.com/citations?user=js3rIYIAAAAJ&hl=en",
       "https://www.researchgate.net/profile/Nima-Soltani-5",
@@ -136,7 +136,7 @@
         </p>
       </div>
 
-      <figure class="instrument reveal" data-reveal role="img" aria-label="Illustrative synthetic traces of several kinds of signal (price, news text, PDE residual, MEG, transactions) approaching a decision boundary. No real data are shown.">
+      <figure class="instrument reveal" data-reveal role="img" aria-label="Illustrative synthetic traces of several kinds of signal (price, news text, PDE residual, rotor angle, MEG, transactions) approaching a decision boundary. No real data are shown.">
         <div class="instrument__bar" aria-hidden="true">
           <span>Signals at the decision boundary</span>
         </div>
@@ -160,8 +160,8 @@
           </p>
           <p>
             At IPM, this means reinforcement-learning agents for trading and portfolio decisions
-            that combine technical, fundamental, and textual inputs; graph and hypergraph models of
-            market structure; physics-informed Kolmogorov–Arnold networks for partial
+            that combine technical, fundamental, and textual inputs and model market structure with
+            graph and hypergraph networks; physics-informed Kolmogorov–Arnold networks for partial
             differential equations; and deep operator networks for power-system dynamics. The work
             has led to manuscripts under review at Elsevier and IEEE journals and an arXiv preprint. At Shahid Beheshti University, I study Ethereum
             protocols and smart-contract security, and analyse MEG recordings, from preprocessing
@@ -239,31 +239,39 @@
         <h2 id="themes-title">One program, many kinds of structure</h2>
         <p class="sec-head__frame">
           Each line of work asks what structure a signal carries, and how a learning system
-          should use it when outcomes are uncertain: the fundamentals behind a price, the relations
-          among assets, the equation behind a field, the dynamics of cortex, the rules of a protocol.
+          should use it when outcomes are uncertain: the fundamentals and relations behind a price,
+          the equation behind a field, the swing of a generator after a fault, the dynamics of
+          cortex, the rules of a protocol.
         </p>
       </header>
 
-      <article class="focus sec-bleed reveal" data-reveal aria-labelledby="focus-title">
-        <div class="focus__text">
-          <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Current research focus · Neuroscience</p>
-          <h3 id="focus-title">Vision, action, and deception</h3>
-          <p class="focus__lead">
-            Perception and action are usually studied apart, yet every reach is planned from what
-            the eyes report, and every movement changes what is seen next. Deception strains that
-            loop. An actor can shape a movement to hide its goal; an observer has to infer the goal
-            from the movement alone. The questions I am working toward:
-          </p>
-          <ol class="focus__qs">
+      <div class="areas sec-bleed reveal" data-reveal>
+        <div class="areas__tabs" aria-label="Research areas">
+          <button class="areas__tab" type="button" id="tab-vision" aria-controls="area-vision">Vision &amp; deception<span class="areas__now">Current focus</span></button>
+          <button class="areas__tab" type="button" id="tab-markets" aria-controls="area-markets">Markets</button>
+          <button class="areas__tab" type="button" id="tab-physics" aria-controls="area-physics">Physics-informed</button>
+          <button class="areas__tab" type="button" id="tab-energy" aria-controls="area-energy">Energy</button>
+          <button class="areas__tab" type="button" id="tab-brain" aria-controls="area-brain">Brain signals</button>
+          <button class="areas__tab" type="button" id="tab-chain" aria-controls="area-chain">Protocols</button>
+        </div>
+        <div class="areas__panels">
+        <article class="focus area is-active" id="area-vision" aria-labelledby="area-vision-title">
+          <div class="focus__text">
+            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Current research focus · Neuroscience</p>
+            <h3 id="area-vision-title">Vision, action, and deception</h3>
+            <p class="focus__lead">
+              Perception and action are usually studied apart, yet every reach is planned from what the eyes report, and every movement changes what is seen next. Deception strains that loop. An actor can shape a movement to hide its goal; an observer has to infer the goal from the movement alone. The questions I am working toward:
+            </p>
+            <ol class="focus__qs">
             <li>How do visual perception and action planning shape each other while a movement is prepared and carried out?</li>
             <li>When an action is meant to deceive, how is the hidden intent expressed in the movement, and how is it read by an observer?</li>
             <li>What does an observer rely on to see through a deceptive action, and how early in the movement does the intent become readable?</li>
-          </ol>
-          <div class="focus__foot">
-            <p class="focus__meta"><span>Visual perception</span><span>Action planning</span><span>Deception</span><span>Intent inference</span></p>
+            </ol>
+            <div class="focus__foot">
+              <p class="focus__meta"><span>Visual perception</span><span>Action planning</span><span>Deception</span><span>Intent inference</span></p>
+            </div>
           </div>
-        </div>
-        <figure class="focus__fig" aria-hidden="true">
+          <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">
             <defs>
               <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -283,121 +291,223 @@
             <text class="loop__label" x="290" y="150">act</text>
             <text class="loop__label loop__label--accent" x="180" y="78">intent</text>
           </svg>
-          <figcaption>A schematic of the questions. No results are shown.</figcaption>
-        </figure>
-      </article>
-
-      <div class="program sec-body">
-        <div class="theme-list">
-          <article class="theme reveal" data-reveal data-topics="markets" data-key="markets">
-            <span class="theme__no" aria-hidden="true">i</span>
-            <div class="theme__body">
-              <p class="theme__tag">Markets</p>
-              <h3><button class="theme__btn" type="button" data-topic="markets" aria-pressed="false">Trading agents that read more than price</button></h3>
-              <p>
-                Reinforcement-learning agents for trading and portfolio allocation that combine price
-                dynamics with company fundamentals and financial text. The backbones are transformers
-                and xLSTM; a conservative on-policy diffusion policy is meant to keep portfolio
-                behaviour stable.
-              </p>
+            <figcaption>A schematic of the questions. No results are shown.</figcaption>
+          </figure>
+        </article>
+        <article class="focus area" id="area-markets" aria-labelledby="area-markets-title">
+          <div class="focus__text">
+            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Markets · IPM</p>
+            <h3 id="area-markets-title">Trading agents that read the whole market</h3>
+            <p class="focus__lead">
+              Prices are only part of what moves a market. Company fundamentals, the language of financial news, and the way assets move together all carry information. This line builds deep reinforcement-learning agents that take those signals in together, with graph and hypergraph neural networks modelling the relations among assets inside the agent rather than as features added afterwards. It underlies papers [1] and [2]. The directions:
+            </p>
+            <ol class="focus__qs">
+            <li>How should technical, fundamental, and textual signals be fused so that an agent&rsquo;s decisions improve, not only its inputs?</li>
+            <li>Which sequence backbones, such as xLSTM and transformers, give a trading policy the memory it needs in nonstationary markets, and how can diffusion policies be trained conservatively enough to stay stable?</li>
+            <li>How can graph and hypergraph networks capture co-movement and group structure among assets in a form the agent can use when it allocates a portfolio?</li>
+            </ol>
+            <div class="focus__foot">
+              <p class="focus__meta"><span>Deep RL</span><span>PPO</span><span>Diffusion policies</span><span>Multimodal fusion</span><span>FinBERT</span><span>xLSTM</span><span>Graph &amp; hypergraph networks</span></p>
+            <p class="focus__refs"><span>Related</span><a href="#pub-1">[1]</a><a href="#pub-2">[2]</a><a href="#appt-ipm">IPM appointment</a></p>
             </div>
-          </article>
-          <article class="theme reveal" data-reveal data-topics="structure" data-key="structure">
-            <span class="theme__no" aria-hidden="true">ii</span>
-            <div class="theme__body">
-              <p class="theme__tag">Structure</p>
-              <h3><button class="theme__btn" type="button" data-topic="structure" aria-pressed="false">Relations as part of the model</button></h3>
-              <p>
-                Graph and hypergraph neural networks in which co-movement, influence, and regime
-                structure among assets are modelled directly, not appended as features after the fact.
-              </p>
+          </div>
+          <figure class="focus__fig" aria-hidden="true">
+          <svg viewBox="0 0 360 180" class="loop">
+            <defs>
+              <marker id="arrow-mk" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 8 4 0 8z" fill="currentColor"/>
+              </marker>
+            </defs>
+            <path class="loop__arc" d="M232 62 C 190 18, 130 20, 96 72" marker-end="url(#arrow-mk)"/>
+            <path class="loop__arc loop__arc--back" d="M96 120 C 140 168, 200 166, 238 134" marker-end="url(#arrow-mk)"/>
+            <circle class="loop__node" cx="70" cy="96" r="30"/>
+            <path class="loop__glyph" d="M55 106 64 95 72 100 85 84"/>
+            <path class="sch__hyper" d="M236 58 C 252 38, 304 42, 306 68 C 308 94, 262 100, 242 88 C 228 80, 226 66, 236 58Z"/>
+            <path class="sch__soft" d="M248 66 291 60M248 66 280 88M291 60 280 88M280 88 312 118M280 88 258 124M258 124 312 118M258 124 296 146M312 118 296 146"/>
+            <circle class="sch__dot" cx="248" cy="66" r="4.5"/>
+            <circle class="sch__dot" cx="291" cy="60" r="4.5"/>
+            <circle class="sch__dot" cx="280" cy="88" r="4.5"/>
+            <circle class="sch__hotdot" cx="312" cy="118" r="4.5"/>
+            <circle class="sch__dot" cx="258" cy="124" r="4.5"/>
+            <circle class="sch__dot" cx="296" cy="146" r="4.5"/>
+            <text class="loop__label" x="70" y="148">agent</text>
+            <text class="loop__label loop__label--accent" x="162" y="30">observe</text>
+            <text class="loop__label" x="166" y="176">allocate</text>
+            <text class="loop__label" x="300" y="176">asset graph</text>
+          </svg>
+            <figcaption>A schematic of the questions. No results are shown.</figcaption>
+          </figure>
+        </article>
+        <article class="focus area" id="area-physics" aria-labelledby="area-physics-title">
+          <div class="focus__text">
+            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Physics-informed learning · IPM</p>
+            <h3 id="area-physics-title">Networks bound by their equations</h3>
+            <p class="focus__lead">
+              A network fitted only to data can match its samples while breaking the physics that produced them. Physics-informed learning puts the governing equations into training. In PG-KINN [4], a Petrov–Galerkin weak formulation is paired with Kolmogorov–Arnold networks, whose learnable univariate functions replace fixed activations, to solve forward and inverse PDE problems in one framework. The same idea, applied to operators, carries the power-systems work [3]. The directions:
+            </p>
+            <ol class="focus__qs">
+            <li>When does a weak, Petrov–Galerkin form of the residual train more reliably than the pointwise residual of standard physics-informed networks?</li>
+            <li>What do the learnable univariate functions of Kolmogorov–Arnold networks offer for representing PDE solutions, compared with fixed activations?</li>
+            <li>How can one framework solve the forward problem and recover unknown coefficients in the inverse problem without separate machinery for each?</li>
+            </ol>
+            <div class="focus__foot">
+              <p class="focus__meta"><span>PINNs</span><span>Kolmogorov–Arnold networks</span><span>Petrov–Galerkin</span><span>Weak formulation</span><span>Inverse problems</span></p>
+            <p class="focus__refs"><span>Related</span><a href="#pub-4">[4]</a><a href="#pub-3">[3]</a><a href="#appt-ipm">IPM appointment</a></p>
             </div>
-          </article>
-          <article class="theme reveal" data-reveal data-topics="physics" data-key="physics">
-            <span class="theme__no" aria-hidden="true">iii</span>
-            <div class="theme__body">
-              <p class="theme__tag">Physics</p>
-              <h3><button class="theme__btn" type="button" data-topic="physics" aria-pressed="false">Networks bound by their equations</button></h3>
-              <p>
-                Physics-informed Kolmogorov–Arnold networks for forward and inverse PDE problems,
-                and deep operator networks for the swing dynamics of power systems. In PG-KINN, a
-                Petrov–Galerkin weak formulation is paired with the learnable univariate functions
-                of a KAN.
-              </p>
+          </div>
+          <figure class="focus__fig" aria-hidden="true">
+          <svg viewBox="0 0 360 180" class="loop">
+            <defs>
+              <marker id="arrow-ph" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 8 4 0 8z" fill="currentColor"/>
+              </marker>
+            </defs>
+            <rect class="sch__frame" x="24" y="50" width="90" height="90"/>
+            <path class="sch__soft" d="M42 50V140M60 50V140M78 50V140M96 50V140M24 68H114M24 86H114M24 104H114M24 122H114"/>
+            <path class="sch__hot" d="M42 140 60 104 78 140"/>
+            <path class="loop__arc" d="M120 95H150" marker-end="url(#arrow-ph)"/>
+            <path class="sch__soft sch__soft--strong" d="M166 72C186 60 196 70 214 60M166 72C186 84 196 88 214 95M166 72C188 110 198 124 214 130M166 120C186 106 196 66 214 60M166 120C186 112 196 100 214 95M166 120C186 128 196 128 214 130"/>
+            <circle class="sch__dot" cx="166" cy="72" r="4"/>
+            <circle class="sch__dot" cx="166" cy="120" r="4"/>
+            <circle class="sch__dot" cx="214" cy="60" r="4"/>
+            <circle class="sch__dot" cx="214" cy="95" r="4"/>
+            <circle class="sch__dot" cx="214" cy="130" r="4"/>
+            <path class="loop__arc" d="M226 95H252" marker-end="url(#arrow-ph)"/>
+            <ellipse class="loop__node" cx="300" cy="95" rx="40" ry="32"/>
+            <ellipse class="sch__frame" cx="304" cy="92" rx="25" ry="19"/>
+            <ellipse class="sch__hot" cx="308" cy="90" rx="10" ry="7"/>
+            <path class="loop__arc loop__arc--back" d="M296 58 C 250 16, 120 14, 72 44" marker-end="url(#arrow-ph)"/>
+            <text class="loop__label loop__label--accent" x="186" y="11">weak-form residual</text>
+            <text class="loop__label" x="69" y="162">test functions</text>
+            <text class="loop__label" x="190" y="162">KAN</text>
+            <text class="loop__label" x="300" y="162">solution</text>
+          </svg>
+            <figcaption>A schematic of the questions. No results are shown.</figcaption>
+          </figure>
+        </article>
+        <article class="focus area" id="area-energy" aria-labelledby="area-energy-title">
+          <div class="focus__text">
+            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Energy · IPM</p>
+            <h3 id="area-energy-title">Fast, physics-consistent power-system dynamics</h3>
+            <p class="focus__lead">
+              After a disturbance, whether a generator stays in step with the grid is decided in the first seconds of its swing. Checking that across many operating conditions means solving the same equations again and again. Paper [3] learns those solutions as an operator: a physics-informed DeepONet for the classical swing dynamics of a single-machine infinite-bus system, trained to respect the swing equation and its initial state. The directions:
+            </p>
+            <ol class="focus__qs">
+            <li>Can one operator network replace repeated numerical solves of the swing equation across initial states and mechanical set-points while staying consistent with the physics?</li>
+            <li>How should initial conditions and the swing-equation residual enter training so that predicted rotor-angle trajectories can be trusted for transient-stability screening?</li>
+            <li>What would it take to extend such surrogates from the classical single-machine model toward richer machine models and multi-machine systems?</li>
+            </ol>
+            <div class="focus__foot">
+              <p class="focus__meta"><span>Power systems</span><span>Transient stability</span><span>Swing equation</span><span>DeepONet</span><span>Surrogate modelling</span></p>
+            <p class="focus__refs"><span>Related</span><a href="#pub-3">[3]</a><a href="#appt-ipm">IPM appointment</a></p>
             </div>
-          </article>
-          <article class="theme reveal" data-reveal data-topics="brain" data-key="brain">
-            <span class="theme__no" aria-hidden="true">iv</span>
-            <div class="theme__body">
-              <p class="theme__tag">Brain signals</p>
-              <h3><button class="theme__btn" type="button" data-topic="brain" aria-pressed="false">From raw MEG to decodable signal</button></h3>
-              <p>
-                Pipelines for MEG preprocessing, source localization, and decoding, with spectral
-                and time–frequency analysis of activity related to visual perception and cognition.
-              </p>
+          </div>
+          <figure class="focus__fig" aria-hidden="true">
+          <svg viewBox="0 0 360 180" class="loop">
+            <defs>
+              <marker id="arrow-en" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 8 4 0 8z" fill="currentColor"/>
+              </marker>
+            </defs>
+            <circle class="loop__node" cx="62" cy="58" r="22"/>
+            <path class="loop__glyph" d="M50 58C54 48 58 48 62 58S70 68 74 58"/>
+            <path class="sch__frame" d="M84 58H150l5 -8 10 16 10 -16 10 16 10 -16 5 8H262"/>
+            <path class="loop__glyph" d="M266 32V84"/>
+            <path class="sch__soft sch__soft--strong" d="M266 36l10 -8M266 48l10 -8M266 60l10 -8M266 72l10 -8M266 84l10 -8"/>
+            <path class="sch__soft" d="M40 152H330M40 104V152"/>
+            <path class="sch__soft" stroke-dasharray="2 4" d="M40 128H330"/>
+            <path class="sch__hot" d="M40.0 106.0 L43.2 107.5 L46.4 110.7 L49.7 115.1 L52.9 120.4 L56.1 126.0 L59.3 131.5 L62.6 136.3 L65.8 140.2 L69.0 142.9 L72.2 144.1 L75.4 144.0 L78.7 142.5 L81.9 139.8 L85.1 136.4 L88.3 132.4 L91.6 128.3 L94.8 124.4 L98.0 121.0 L101.2 118.4 L104.4 116.7 L107.7 116.1 L110.9 116.5 L114.1 117.9 L117.3 120.0 L120.6 122.7 L123.8 125.6 L127.0 128.6 L130.2 131.4 L133.4 133.8 L136.7 135.5 L139.9 136.5 L143.1 136.7 L146.3 136.2 L149.6 135.0 L152.8 133.4 L156.0 131.3 L159.2 129.1 L162.4 126.9 L165.7 125.0 L168.9 123.4 L172.1 122.2 L175.3 121.7 L178.6 121.7 L181.8 122.2 L185.0 123.1 L188.2 124.5 L191.4 126.0 L194.7 127.7 L197.9 129.2 L201.1 130.6 L204.3 131.7 L207.6 132.4 L210.8 132.7 L214.0 132.6 L217.2 132.1 L220.4 131.3 L223.7 130.3 L226.9 129.1 L230.1 127.9 L233.3 126.8 L236.6 125.8 L239.8 125.1 L243.0 124.7 L246.2 124.5 L249.4 124.7 L252.7 125.1 L255.9 125.8 L259.1 126.6 L262.3 127.4 L265.6 128.3 L268.8 129.1 L272.0 129.8 L275.2 130.2 L278.4 130.5 L281.7 130.5 L284.9 130.3 L288.1 130.0 L291.3 129.5 L294.6 128.9 L297.8 128.2 L301.0 127.6 L304.2 127.0 L307.4 126.6 L310.7 126.3 L313.9 126.2 L317.1 126.2 L320.3 126.3 L323.6 126.6 L326.8 127.0 L330.0 127.5"/>
+            <text class="loop__label" x="62" y="24">generator</text>
+            <text class="loop__label" x="266" y="24">infinite bus</text>
+            <text class="loop__label loop__label--left" x="46" y="174">rotor angle after a disturbance</text>
+          </svg>
+            <figcaption>A schematic of the questions. No results are shown.</figcaption>
+          </figure>
+        </article>
+        <article class="focus area" id="area-brain" aria-labelledby="area-brain-title">
+          <div class="focus__text">
+            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Brain signals · Shahid Beheshti University</p>
+            <h3 id="area-brain-title">From raw MEG to decodable signal</h3>
+            <p class="focus__lead">
+              Magnetoencephalography records the brain&rsquo;s magnetic fields with millisecond precision, but what reaches the sensors is a mixture of sources, noise, and artefacts. At Shahid Beheshti University, this work builds the path from raw recordings to interpretable signal for studying visual perception and cognitive processing. The directions:
+            </p>
+            <ol class="focus__qs">
+            <li>Which preprocessing choices, such as filtering, artefact rejection, and epoching, keep the signal of interest while removing what is not neural?</li>
+            <li>How can activity measured at the sensors be localized to cortical sources reliably enough to support conclusions about visual and cognitive processing?</li>
+            <li>What do spectral and time–frequency analyses, together with decoding models, reveal about when and where perceptual information is represented?</li>
+            </ol>
+            <div class="focus__foot">
+              <p class="focus__meta"><span>MEG</span><span>Preprocessing</span><span>Source localization</span><span>Neural decoding</span><span>Time–frequency analysis</span></p>
+            <p class="focus__refs"><span>Related</span><a href="#appt-neuro">Neuroscience appointment</a></p>
             </div>
-          </article>
-          <article class="theme reveal" data-reveal data-topics="chain" data-key="chain">
-            <span class="theme__no" aria-hidden="true">v</span>
-            <div class="theme__body">
-              <p class="theme__tag">Protocols</p>
-              <h3><button class="theme__btn" type="button" data-topic="chain" aria-pressed="false">Systems that must hold against adversaries</button></h3>
-              <p>
-                Ethereum protocol design, consensus mechanisms, Solidity contracts, and on-chain
-                transaction modelling, studied through the security questions that cryptocurrency
-                and DeFi infrastructure raise.
-              </p>
+          </div>
+          <figure class="focus__fig" aria-hidden="true">
+          <svg viewBox="0 0 360 180" class="loop">
+            <defs>
+              <marker id="arrow-mg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 8 4 0 8z" fill="currentColor"/>
+              </marker>
+            </defs>
+            <path class="sch__frame" d="M22 128A58 58 0 0 1 138 128"/>
+            <path class="loop__glyph" d="M38 128A42 42 0 0 1 122 128Z"/>
+            <circle class="sch__dot" cx="136.7" cy="115.9" r="3.2"/><circle class="sch__dot" cx="125.7" cy="92.3" r="3.2"/><circle class="sch__dot" cx="105.4" cy="75.9" r="3.2"/><circle class="sch__dot" cx="80.0" cy="70.0" r="3.2"/><circle class="sch__dot" cx="54.6" cy="75.9" r="3.2"/><circle class="sch__dot" cx="34.3" cy="92.3" r="3.2"/><circle class="sch__dot" cx="23.3" cy="115.9" r="3.2"/>
+            <circle class="sch__hotdot" cx="94" cy="104" r="4"/>
+            <path class="loop__arc loop__arc--back" d="M108 72 C 104 82, 100 90, 96 98" marker-end="url(#arrow-mg)"/>
+            <path class="loop__arc" d="M148 108H186" marker-end="url(#arrow-mg)"/>
+            <rect class="sch__cell" x="196" y="66" width="11" height="11" opacity="0.15"/><rect class="sch__cell" x="209" y="66" width="11" height="11" opacity="0.25"/><rect class="sch__cell" x="222" y="66" width="11" height="11" opacity="0.6"/><rect class="sch__cell" x="235" y="66" width="11" height="11" opacity="0.35"/><rect class="sch__cell" x="248" y="66" width="11" height="11" opacity="0.15"/><rect class="sch__cell" x="196" y="79" width="11" height="11" opacity="0.2"/><rect class="sch__cell" x="209" y="79" width="11" height="11" opacity="0.55"/><rect class="sch__cell" x="222" y="79" width="11" height="11" opacity="0.9"/><rect class="sch__cell" x="235" y="79" width="11" height="11" opacity="0.5"/><rect class="sch__cell" x="248" y="79" width="11" height="11" opacity="0.2"/><rect class="sch__cell" x="196" y="92" width="11" height="11" opacity="0.35"/><rect class="sch__cell" x="209" y="92" width="11" height="11" opacity="0.7"/><rect class="sch__cell" x="222" y="92" width="11" height="11" opacity="0.45"/><rect class="sch__cell" x="235" y="92" width="11" height="11" opacity="0.25"/><rect class="sch__cell" x="248" y="92" width="11" height="11" opacity="0.12"/><rect class="sch__cell" x="196" y="105" width="11" height="11" opacity="0.25"/><rect class="sch__cell" x="209" y="105" width="11" height="11" opacity="0.3"/><rect class="sch__cell" x="222" y="105" width="11" height="11" opacity="0.2"/><rect class="sch__cell" x="235" y="105" width="11" height="11" opacity="0.15"/><rect class="sch__cell" x="248" y="105" width="11" height="11" opacity="0.1"/>
+            <path class="loop__arc" d="M266 92H292" marker-end="url(#arrow-mg)"/>
+            <circle class="loop__node" cx="318" cy="92" r="20"/>
+            <path class="loop__glyph" d="M309 98V90M315 98V82M321 98V87M327 98V93"/>
+            <text class="loop__label" x="80" y="158">sensors to sources</text>
+            <text class="loop__label" x="228" y="140">time–frequency</text>
+            <text class="loop__label" x="318" y="140">decode</text>
+          </svg>
+            <figcaption>A schematic of the questions. No results are shown.</figcaption>
+          </figure>
+        </article>
+        <article class="focus area" id="area-chain" aria-labelledby="area-chain-title">
+          <div class="focus__text">
+            <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Research line · Protocols · Shahid Beheshti University</p>
+            <h3 id="area-chain-title">Systems that must hold against adversaries</h3>
+            <p class="focus__lead">
+              A blockchain is a protocol that has to keep working while some participants try to break it. At Shahid Beheshti University, I study Ethereum from that angle: how consensus and protocol rules shape what transactions can do, how on-chain activity can be modelled, and where smart contracts and DeFi infrastructure are exposed. The directions:
+            </p>
+            <ol class="focus__qs">
+            <li>How do consensus mechanisms and protocol design choices in Ethereum constrain what honest and adversarial participants can do?</li>
+            <li>How can on-chain transactions be modelled so that unusual or exploitative patterns stand out?</li>
+            <li>Which classes of vulnerability recur in Solidity smart contracts and DeFi protocols, and how can analysis and careful design catch them before deployment?</li>
+            </ol>
+            <div class="focus__foot">
+              <p class="focus__meta"><span>Ethereum</span><span>Consensus</span><span>Transaction modelling</span><span>Solidity</span><span>Smart-contract security</span><span>DeFi</span></p>
+            <p class="focus__refs"><span>Related</span><a href="#appt-chain">Blockchain appointment</a></p>
             </div>
-          </article>
+          </div>
+          <figure class="focus__fig" aria-hidden="true">
+          <svg viewBox="0 0 360 180" class="loop">
+            <defs>
+              <marker id="arrow-ch" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 8 4 0 8z" fill="currentColor"/>
+              </marker>
+            </defs>
+            <rect class="loop__node" x="24" y="44" width="72" height="50" rx="3"/>
+            <rect class="loop__node" x="144" y="44" width="72" height="50" rx="3"/>
+            <rect class="loop__node" x="264" y="44" width="72" height="50" rx="3"/>
+            <path class="sch__soft sch__soft--strong" d="M36 60H84M36 70H76M36 80H80M156 60H204M156 70H196M156 80H200M276 60H324M276 70H316M276 80H320"/>
+            <path class="loop__arc" d="M96 69H144M216 69H264"/>
+            <path class="sch__soft" stroke-dasharray="3 4" d="M180 94V118"/>
+            <rect class="sch__frame" x="150" y="118" width="60" height="44" rx="2"/>
+            <text class="sch__code" x="180" y="146">{ }</text>
+            <circle class="loop__intent" cx="306" cy="140" r="12"/>
+            <text class="loop__q" x="306" y="144.5">?</text>
+            <path class="sch__hot" stroke-dasharray="4 4" d="M292 140H214" marker-end="url(#arrow-ch)"/>
+            <text class="loop__label" x="180" y="30">blocks and transactions</text>
+            <text class="loop__label" x="110" y="146">contract</text>
+            <text class="loop__label loop__label--accent" x="306" y="172">adversary</text>
+          </svg>
+            <figcaption>A schematic of the questions. No results are shown.</figcaption>
+          </figure>
+        </article>
         </div>
-
-        <aside class="map reveal" data-reveal aria-labelledby="map-title">
-          <h3 id="map-title" class="map__title">Program map</h3>
-          <p class="map__hint">Each line of work, and the manuscripts and appointments it runs through. Select a row to trace it across the page.</p>
-          <table class="map__table">
-            <caption class="sr-only">Lines of work and the manuscripts and appointments they connect to</caption>
-            <thead>
-              <tr>
-                <td></td>
-                <th scope="col"><a href="#pub-1"><span>[1] xLSTM trading</span></a></th>
-                <th scope="col"><a href="#pub-2"><span>[2] Multimodal portfolio</span></a></th>
-                <th scope="col"><a href="#pub-3"><span>[3] Swing operator</span></a></th>
-                <th scope="col"><a href="#pub-4"><span>[4] PG-KINN</span></a></th>
-                <th scope="col" class="map__gap"><a href="#appt-ipm"><span>IPM</span></a></th>
-                <th scope="col"><a href="#appt-chain"><span>Blockchain group</span></a></th>
-                <th scope="col"><a href="#appt-neuro"><span>Neuroscience group</span></a></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-row="markets">
-                <th scope="row"><button class="map__btn" type="button" data-topic="markets" aria-pressed="false">Markets</button></th>
-                <td class="on"><span class="sr-only">linked</span></td><td class="on"><span class="sr-only">linked</span></td><td></td><td></td>
-                <td class="on map__gap"><span class="sr-only">linked</span></td><td></td><td></td>
-              </tr>
-              <tr data-row="structure">
-                <th scope="row"><button class="map__btn" type="button" data-topic="structure" aria-pressed="false">Structure</button></th>
-                <td></td><td></td><td></td><td></td>
-                <td class="on map__gap"><span class="sr-only">linked</span></td><td></td><td></td>
-              </tr>
-              <tr data-row="physics">
-                <th scope="row"><button class="map__btn" type="button" data-topic="physics" aria-pressed="false">Physics</button></th>
-                <td></td><td></td><td class="on"><span class="sr-only">linked</span></td><td class="on"><span class="sr-only">linked</span></td>
-                <td class="on map__gap"><span class="sr-only">linked</span></td><td></td><td></td>
-              </tr>
-              <tr data-row="brain">
-                <th scope="row"><button class="map__btn" type="button" data-topic="brain" aria-pressed="false">Brain signals</button></th>
-                <td></td><td></td><td></td><td></td>
-                <td class="map__gap"></td><td></td><td class="on"><span class="sr-only">linked</span></td>
-              </tr>
-              <tr data-row="chain">
-                <th scope="row"><button class="map__btn" type="button" data-topic="chain" aria-pressed="false">Protocols</button></th>
-                <td></td><td></td><td></td><td></td>
-                <td class="map__gap"></td><td class="on"><span class="sr-only">linked</span></td><td></td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="map__status" id="filterStatus" aria-live="polite"></p>
-        </aside>
       </div>
     </section>
 
@@ -435,7 +545,7 @@
           <p class="writing__by"><b>N. Soltani</b>, A. Sadr, D. Rahmati</p>
           <p class="writing__note">Fuses technical and fundamental signals in a transformer-based PPO agent for portfolio trading, and trains its diffusion policy conservatively on-policy for robustness.</p>
         </li>
-        <li class="writing reveal" id="pub-3" data-reveal data-topics="physics">
+        <li class="writing reveal" id="pub-3" data-reveal data-topics="energy physics">
           <span class="writing__index" aria-hidden="true">3</span>
           <div class="writing__meta">
             <span class="badge">Under review</span>
@@ -467,7 +577,7 @@
       </header>
 
       <div class="appointments sec-body">
-        <article class="appointment reveal" id="appt-ipm" data-reveal data-topics="markets structure physics">
+        <article class="appointment reveal" id="appt-ipm" data-reveal data-topics="markets physics energy">
           <p class="appointment__when"><time datetime="2023">2023</time> to present</p>
           <div>
             <h3>Institute for Research in Fundamental Sciences (IPM)</h3>
@@ -475,7 +585,7 @@
             <p>
               Deep reinforcement learning and multimodal models for market modelling and automated
               trading: MTDP-PPO, which fuses modalities through transformers and diffusion policies;
-              fused xLSTM–PPO agents; graph and hypergraph models of market dynamics; PG-KINN
+              fused xLSTM–PPO agents with graph and hypergraph models of market structure; PG-KINN
               for PDEs; and physics-informed operator networks for power-system swing dynamics.
             </p>
           </div>
@@ -820,12 +930,6 @@
       </div>
     </section>
   </main>
-
-  <div class="tracer" id="tracer" hidden>
-    <span class="tracer__dot" aria-hidden="true"></span>
-    <span id="tracerText"></span>
-    <button type="button" id="tracerClear">Clear</button>
-  </div>
 
   <footer class="site-footer">
     <span>© <span id="year">2026</span> Nima Soltani · Tehran</span>

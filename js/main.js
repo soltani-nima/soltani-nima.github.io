@@ -146,57 +146,39 @@
     sections.forEach((s) => s.classList.add("is-in"));
   }
 
-  /* Research program: trace a line of work across the page */
-  const labels = { markets: "Markets", structure: "Structure", physics: "Physics", brain: "Brain signals", chain: "Protocols" };
-  const topicButtons = [...document.querySelectorAll("button[data-topic]")];
-  const themeRows = [...document.querySelectorAll("[data-key]")];
-  const mapRows = [...document.querySelectorAll(".map__table tbody tr")];
-  const mapTable = document.querySelector(".map__table");
-  const topicNodes = [...document.querySelectorAll("[data-topics]")];
-  const filterStatus = document.getElementById("filterStatus");
-  const tracer = document.getElementById("tracer");
-  const tracerText = document.getElementById("tracerText");
-  const topicListeners = [];
-  let activeTopic = "all";
-
-  const applyTopic = (topic) => {
-    activeTopic = topic;
-    topicButtons.forEach((b) => b.setAttribute("aria-pressed", b.dataset.topic === topic ? "true" : "false"));
-    themeRows.forEach((row) => row.classList.toggle("is-selected", row.dataset.key === topic));
-    mapRows.forEach((row) => row.classList.toggle("is-selected", row.dataset.row === topic));
-    mapTable?.classList.toggle("has-selection", topic !== "all");
-
-    topicNodes.forEach((node) => {
-      const match = topic === "all" || (node.dataset.topics || "").split(/\s+/).includes(topic);
-      node.classList.toggle("is-dimmed", !match);
+  /* Research areas: tabs */
+  const areaTabs = [...document.querySelectorAll(".areas__tab")];
+  const areaPanels = areaTabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
+  const selectArea = (index, moveFocus) => {
+    areaTabs.forEach((tab, i) => {
+      const on = i === index;
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.tabIndex = on ? 0 : -1;
+      areaPanels[i].classList.toggle("is-active", on);
+      areaPanels[i].toggleAttribute("inert", !on);
     });
-
-    const summary = topic === "all" ? "" : `${labels[topic]}: related work highlighted across the page`;
-    if (filterStatus) filterStatus.textContent = summary;
-    if (tracer && tracerText) {
-      tracer.hidden = topic === "all";
-      tracerText.textContent = topic === "all" ? "" : `Tracing ${labels[topic]}`;
+    if (moveFocus) {
+      areaTabs[index].focus();
+      areaTabs[index].scrollIntoView({ block: "nearest", inline: "nearest" });
     }
-    topicListeners.forEach((fn) => fn(topic));
   };
-  const toggleTopic = (topic) => applyTopic(activeTopic === topic ? "all" : topic);
-
-  topicButtons.forEach((b) =>
-    b.addEventListener("click", (event) => {
-      event.stopPropagation();
-      toggleTopic(b.dataset.topic);
-    })
-  );
-  themeRows.forEach((row) =>
-    row.addEventListener("click", (event) => {
-      if (event.target.closest("a, button")) return;
-      toggleTopic(row.dataset.key);
-    })
-  );
-  document.getElementById("tracerClear")?.addEventListener("click", () => applyTopic("all"));
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && activeTopic !== "all" && !nav?.classList.contains("is-open")) applyTopic("all");
-  });
+  if (areaTabs.length) {
+    document.querySelector(".areas__tabs").setAttribute("role", "tablist");
+    areaTabs.forEach((tab, i) => {
+      tab.setAttribute("role", "tab");
+      areaPanels[i].setAttribute("role", "tabpanel");
+      areaPanels[i].setAttribute("aria-labelledby", tab.id);
+      tab.addEventListener("click", () => selectArea(i));
+      tab.addEventListener("keydown", (event) => {
+        const last = areaTabs.length - 1;
+        const next = { ArrowRight: i === last ? 0 : i + 1, ArrowLeft: i === 0 ? last : i - 1, Home: 0, End: last }[event.key];
+        if (next === undefined) return;
+        event.preventDefault();
+        selectArea(next, true);
+      });
+    });
+    selectArea(0);
+  }
 
   /* Copy contact details */
   const copyStatus = document.getElementById("copyStatus");
@@ -258,12 +240,12 @@
     let k = 0;
     const st = { x: 0, burst: 0, len: 0 };
     const channels = [
-      { label: "price", topics: ["markets", "structure"], next: () => (st.x = st.x * 0.985 + 0.11 * gauss(), Math.tanh(st.x)) },
-      { label: "news text", topics: ["markets"], next: (prev) => clamp(prev * 0.84 + (Math.random() < 0.035 ? (Math.random() < 0.5 ? -1 : 1) * (0.5 + Math.random() * 0.5) : 0) + 0.03 * gauss()) },
-      { label: "PDE residual", topics: ["physics"], next: () => 0.8 * Math.sin(k * 0.11) * (0.55 + 0.45 * Math.sin(k * 0.017)) },
+      { label: "price", next: () => (st.x = st.x * 0.985 + 0.11 * gauss(), Math.tanh(st.x)) },
+      { label: "news text", next: (prev) => clamp(prev * 0.84 + (Math.random() < 0.035 ? (Math.random() < 0.5 ? -1 : 1) * (0.5 + Math.random() * 0.5) : 0) + 0.03 * gauss()) },
+      { label: "PDE residual", next: () => 0.8 * Math.sin(k * 0.11) * (0.55 + 0.45 * Math.sin(k * 0.017)) },
+      { label: "rotor angle", next: () => { const t = (k % 180) / 180; return 0.85 * Math.exp(-3.2 * t) * Math.cos(2 * Math.PI * 5 * t); } },
       {
         label: "MEG",
-        topics: ["brain"],
         next() {
           let v = 0.45 * Math.sin(k * 0.9) * (0.5 + 0.5 * Math.sin(k * 0.031)) + 0.1 * gauss();
           if (st.burst > 0) {
@@ -275,7 +257,7 @@
           return clamp(v);
         },
       },
-      { label: "transactions", topics: ["chain"], bars: true, next: () => (k % 11 === 0 ? 0.25 + Math.random() * 0.75 : 0) },
+      { label: "transactions", bars: true, next: () => (k % 11 === 0 ? 0.25 + Math.random() * 0.75 : 0) },
     ];
     const buffers = channels.map(() => new Float32Array(N));
     const step = () => {
@@ -292,7 +274,6 @@
     let w = 0;
     let h = 0;
     let colors = {};
-    let topic = "all";
     const readColors = () => {
       const cs = getComputedStyle(doc);
       const v = (name) => cs.getPropertyValue(name).trim();
@@ -336,10 +317,7 @@
       channels.forEach((c, i) => {
         const y0 = rowH * (i + 0.64);
         const amp = rowH * 0.28;
-        const on = topic === "all" || c.topics.includes(topic);
-        const hot = topic !== "all" && on;
-        const stroke = hot ? colors.signal : colors.ink;
-        ctx.globalAlpha = on ? 1 : 0.18;
+        const stroke = colors.ink;
 
         ctx.strokeStyle = colors.line;
         ctx.beginPath();
@@ -347,12 +325,12 @@
         ctx.lineTo(w, Math.round(y0) + 0.5);
         ctx.stroke();
 
-        ctx.fillStyle = hot ? colors.signal : colors.muted;
+        ctx.fillStyle = colors.muted;
         ctx.fillText(c.label, 6, rowH * i + 4);
 
         const b = buffers[i];
         ctx.strokeStyle = stroke;
-        ctx.lineWidth = hot && topic !== "all" ? 1.6 : 1.15;
+        ctx.lineWidth = 1.15;
         ctx.beginPath();
         if (c.bars) {
           for (let j = 0; j < N; j += 1) {
@@ -379,7 +357,6 @@
           ctx.fill();
         }
       });
-      ctx.globalAlpha = 1;
 
       ctx.strokeStyle = colors.signal;
       ctx.setLineDash([3, 3]);
@@ -433,10 +410,6 @@
 
     themeListeners.push(() => {
       readColors();
-      if (!running) draw(0);
-    });
-    topicListeners.push((t) => {
-      topic = t;
       if (!running) draw(0);
     });
     document.fonts?.ready.then(() => !running && draw(0));

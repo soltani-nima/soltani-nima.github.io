@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nimasol42.github.io/sitemap.xml
+Sitemap: https://soltani-nima.github.io/sitemap.xml

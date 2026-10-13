@@ -1,6 +1,6 @@
 # Nima Soltani — Academic Site
 
-Personal academic website for [nimasol42.github.io](https://nimasol42.github.io).
+Personal academic website for [soltani-nima.github.io](https://soltani-nima.github.io).
 
 ## Stack
 

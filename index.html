@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nima Soltani · Computer Engineering Research</title>
-  <meta name="description" content="Nima Soltani is a computer engineering researcher at Shahid Beheshti University and IPM, working on deep reinforcement learning, multimodal and physics-informed models, MEG studies of vision, action, and deception, and blockchain systems." />
+  <title>Nima Soltani · Learning and decision-making from structured signals</title>
+  <meta name="description" content="Nima Soltani studies computer engineering at Shahid Beheshti University and works with research groups at IPM and SBU on reinforcement learning for markets, physics-informed networks, MEG studies of vision, action, and deception, and blockchain protocols." />
   <meta name="author" content="Nima Soltani" />
-  <meta name="theme-color" content="#0b1220" />
-  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f4f5f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0d1115" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
   <link rel="canonical" href="https://soltani-nima.github.io/" />
 
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Nima Soltani" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Nima Soltani · Computer Engineering Research" />
-  <meta property="og:description" content="Deep reinforcement learning, multimodal and physics-informed models, neural signals, and blockchain systems — research at Shahid Beheshti University and IPM." />
+  <meta property="og:title" content="Nima Soltani · Learning and decision-making from structured signals" />
+  <meta property="og:description" content="Reinforcement learning for markets, physics-informed networks, MEG studies of vision, action, and deception, and blockchain protocols. Research at IPM and Shahid Beheshti University." />
   <meta property="og:url" content="https://soltani-nima.github.io/" />
   <meta property="profile:first_name" content="Nima" />
   <meta property="profile:last_name" content="Soltani" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Nima Soltani · Computer Engineering Research" />
-  <meta name="twitter:description" content="Deep reinforcement learning, multimodal and physics-informed models, neural signals, and blockchain systems." />
+  <meta name="twitter:title" content="Nima Soltani · Learning and decision-making from structured signals" />
+  <meta name="twitter:description" content="Reinforcement learning for markets, physics-informed networks, MEG studies of vision and action, and blockchain protocols." />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon.ico" sizes="32x32" />
@@ -28,9 +29,17 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add("js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      d.dataset.theme = t;
+    })();
+  </script>
 
   <script type="application/ld+json">
   {
@@ -67,7 +76,6 @@
   </svg>
 
   <div class="progress" id="progress" aria-hidden="true"></div>
-  <canvas class="field" id="field" aria-hidden="true"></canvas>
 
   <header class="site-header" id="top">
     <a class="mark" href="#top" aria-label="Nima Soltani, back to top">
@@ -75,13 +83,18 @@
       <span>Nima Soltani</span>
     </a>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" type="button">
-      <span class="nav-toggle__bars" aria-hidden="true"></span>
-      <span class="nav-toggle__text">Menu</span>
-    </button>
+    <div class="header-tools">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Dark theme">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" type="button">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Menu</span>
+      </button>
+    </div>
 
     <nav class="site-nav" id="siteNav" aria-label="Primary">
-      <a href="#overview">Overview</a>
+      <a href="#overview">About</a>
       <a href="#themes">Research</a>
       <a href="#writing">Publications</a>
       <a href="#appointments">Appointments</a>
@@ -100,142 +113,133 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-name">
-      <div class="hero__rail" aria-hidden="true">
-        <span>IPM</span>
-        <span>SBU</span>
-        <span>Sharif</span>
-        <span>AUT</span>
-      </div>
+      <p class="hero__eyebrow reveal" data-reveal><span>Computer Engineering</span> <span>· Shahid Beheshti University</span> <span>· IPM · Tehran</span></p>
+      <h1 id="hero-name" class="hero__name reveal" data-reveal>Nima <em>Soltani</em></h1>
 
-      <div class="hero__body">
-        <p class="hero__eyebrow reveal" data-reveal>Computer&nbsp;Engineering · Shahid&nbsp;Beheshti&nbsp;University · IPM</p>
-        <h1 id="hero-name" class="hero__name reveal" data-reveal>Nima Soltani</h1>
+      <div class="hero__text">
         <p class="hero__statement reveal" data-reveal>
-          I study how sequential decision systems learn from heterogeneous signals — markets,
-          physical laws, graphs, and neural recordings — and, in the brain, how what we see
-          is bound to what we do.
+          I work on learning and decision-making from signals that do not share a single form:
+          prices beside fundamentals, measurements beside differential equations, sequences
+          beside graphs. A newer line of work, with MEG, asks how seeing shapes acting, and
+          what an action can be made to hide.
         </p>
 
         <div class="hero__cta reveal" data-reveal>
-          <a class="btn btn--solid" href="#writing">Read the publications</a>
-          <a class="btn btn--line" href="#contact">Get in touch</a>
+          <a class="btn btn--solid" href="#writing">Read the manuscripts</a>
+          <a class="btn btn--line" href="#contact">Write to me</a>
         </div>
 
-        <div class="hero__record reveal" data-reveal>
-          <span class="hero__record-label">Scholarly record</span>
+        <p class="hero__record reveal" data-reveal>
           <a href="https://scholar.google.com/citations?user=js3rIYIAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Google Scholar</a>
           <a href="https://www.researchgate.net/profile/Nima-Soltani-5" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-rg"/></svg>ResearchGate</a>
-        </div>
+          <a href="https://github.com/Nimasol42" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+        </p>
       </div>
 
-      <aside class="hero__panel reveal" data-reveal aria-label="At a glance">
-        <p class="glance__caption"><span class="pulse" aria-hidden="true"></span>Currently</p>
-        <dl class="glance">
-          <div class="glance__item">
-            <dt>Affiliation</dt>
-            <dd>Shahid Beheshti University, Tehran</dd>
-          </div>
-          <div class="glance__item">
-            <dt>Research groups</dt>
-            <dd>IPM · two groups at SBU</dd>
-          </div>
-          <div class="glance__item">
-            <dt>Focus</dt>
-            <dd>Deep RL · Multimodal learning · Vision and action</dd>
-          </div>
-          <div class="glance__item">
-            <dt>Degree</dt>
-            <dd>B.Sc. Computer Engineering <span class="glance__gpa">GPA 3.6 / 4</span></dd>
-          </div>
-        </dl>
-      </aside>
+      <figure class="instrument reveal" data-reveal>
+        <div class="instrument__bar">
+          <span>Eight channels, one decision boundary</span>
+          <button class="instrument__pause" id="signalPause" type="button" aria-pressed="false">Pause</button>
+        </div>
+        <canvas id="signals" aria-hidden="true"></canvas>
+        <figcaption>
+          Synthetic traces of the kinds of signal the work learns from, from market prices to MEG
+          and on-chain transactions. A decision has to be made at the edge marked <i>now</i>,
+          before the hatched region is observed. Illustrative only; no data are shown.
+        </figcaption>
+      </figure>
 
-      <a class="hero__scroll" href="#overview" aria-label="Scroll to overview"><span aria-hidden="true"></span></a>
+      <dl class="glance reveal" data-reveal>
+        <div>
+          <dt>Studying</dt>
+          <dd>B.Sc. Computer Engineering, Shahid Beheshti University <span class="glance__gpa">GPA 3.6&thinsp;/&thinsp;4</span></dd>
+        </div>
+        <div>
+          <dt>Research groups</dt>
+          <dd>IPM, with Dr. Dara Rahmati; two groups at Shahid Beheshti</dd>
+        </div>
+        <div>
+          <dt>Teaching this term</dt>
+          <dd>Ten sections at Sharif, Amirkabir, and Shahid Beheshti</dd>
+        </div>
+        <div>
+          <dt>Current focus</dt>
+          <dd>Vision, action, and deception, studied with MEG</dd>
+        </div>
+      </dl>
     </section>
 
     <section class="section" id="overview" aria-labelledby="overview-title">
-      <div class="section__intro">
-        <p class="kicker"><span class="kicker__no">01</span>Overview</p>
-        <h2 id="overview-title">A research practice between models, markets, and measurement</h2>
-      </div>
-      <div class="overview-grid">
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">01</span><span class="sec-mark__label">About</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">About</p>
+        <h2 id="overview-title">Learning systems that must act before the evidence is in</h2>
+      </header>
+      <div class="sec-body overview-grid">
         <div class="overview-copy reveal" data-reveal>
           <p class="overview-copy__lead">
-            I am an undergraduate in Computer Engineering at Shahid Beheshti University
-            and a research assistant at the Institute for Research in Fundamental Sciences (IPM),
-            where I work with Dr. Dara Rahmati on reinforcement learning for financial markets
-            and on physics-informed networks.
+            I study Computer Engineering at Shahid Beheshti University in Tehran and work as a
+            research assistant in three groups: with Dr. Dara Rahmati at the Institute for Research
+            in Fundamental Sciences (IPM), and with Dr. Maedeh Mosharraf and Dr. Narjes Soltani at
+            Shahid Beheshti.
           </p>
           <p>
-            The common thread is learning from signals that do not share a single form:
-            price series beside fundamentals, differential equations beside data, graphs beside
-            sequences. I care about architectures that respect that structure, and about
-            evaluations careful enough to tell when they do not.
+            At IPM I work on reinforcement learning for trading and portfolio management, and on
+            physics-informed networks for partial differential equations. That work has produced
+            two manuscripts now under review at Elsevier journals and one arXiv preprint.
           </p>
           <p>
-            At Shahid Beheshti I study Ethereum protocols and smart-contract security with
-            Dr. Maedeh Mosharraf, and work with Dr. Narjes Soltani on MEG: how visual perception
-            and action planning interact, and how deceptive intent shows up in action and in
-            neural signals. Teaching runs alongside all of it, at Shahid Beheshti, Sharif, and
-            Amirkabir University of Technology.
+            With Dr. Mosharraf I study Ethereum protocols and smart-contract security. With
+            Dr. Soltani I analyse MEG recordings, and I am now turning to how vision and action
+            interact, and how deceptive intent is carried in both.
+          </p>
+          <p>
+            Teaching has run alongside the research since 2024: 34 course sections at Sharif,
+            Amirkabir, and Shahid Beheshti, six of them as head TA, from first-year programming
+            to graduate courses.
           </p>
         </div>
         <dl class="stat-rail reveal" data-reveal>
-          <div class="stat">
-            <dt>Manuscripts under review or in preprint</dt>
-            <dd data-count="3">3</dd>
-          </div>
-          <div class="stat">
-            <dt>Concurrent research appointments</dt>
-            <dd data-count="3">3</dd>
-          </div>
-          <div class="stat">
-            <dt>Teaching assistantships across three universities</dt>
-            <dd data-count="34">34</dd>
-          </div>
+          <div class="stat"><dt>Manuscripts under review or in preprint</dt><dd data-count="3">3</dd></div>
+          <div class="stat"><dt>Research groups, one institute and two university labs</dt><dd data-count="3">3</dd></div>
+          <div class="stat"><dt>Course sections taught as an assistant</dt><dd data-count="34">34</dd></div>
+          <div class="stat"><dt>Of those, as head TA</dt><dd data-count="6">6</dd></div>
         </dl>
       </div>
     </section>
 
     <section class="section" id="themes" aria-labelledby="themes-title">
-      <div class="section__intro section__intro--split">
-        <div>
-          <p class="kicker"><span class="kicker__no">02</span>Research</p>
-          <h2 id="themes-title">A current focus, and five questions I keep returning to</h2>
-        </div>
-        <div class="filter">
-          <p class="filter__hint" id="filterHint">Choose a theme to keep its papers and appointments in focus.</p>
-          <div class="theme-switch" role="group" aria-label="Highlight work by theme" aria-describedby="filterHint">
-            <button type="button" class="theme-pill is-active" data-topic="all" aria-pressed="true">All</button>
-            <button type="button" class="theme-pill" data-topic="markets" aria-pressed="false">Markets</button>
-            <button type="button" class="theme-pill" data-topic="structure" aria-pressed="false">Structure</button>
-            <button type="button" class="theme-pill" data-topic="physics" aria-pressed="false">Physics</button>
-            <button type="button" class="theme-pill" data-topic="brain" aria-pressed="false">Brain signals</button>
-            <button type="button" class="theme-pill" data-topic="chain" aria-pressed="false">Protocols</button>
-          </div>
-          <p class="filter__status" id="filterStatus" aria-live="polite"></p>
-        </div>
-      </div>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">02</span><span class="sec-mark__label">Research</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">Research</p>
+        <h2 id="themes-title">One program, five kinds of structure</h2>
+        <p class="sec-head__frame">
+          Each line of work asks what structure a signal carries, and how a learning system
+          should use it when outcomes are uncertain: the fundamentals behind a price, the relations
+          among assets, the equation behind a field, the dynamics of cortex, the rules of a protocol.
+        </p>
+      </header>
 
-      <article class="focus reveal" data-reveal data-topics="brain" data-key="brain" aria-labelledby="focus-title">
+      <article class="focus sec-bleed reveal" data-reveal data-topics="brain" data-key="brain" aria-labelledby="focus-title">
         <div class="focus__text">
           <p class="focus__kicker"><span class="focus__dot" aria-hidden="true"></span>Current focus · Computational neuroscience</p>
           <h3 id="focus-title">Vision, action, and deception</h3>
           <p class="focus__lead">
-            Seeing and acting are usually studied apart, yet every reach is planned from what
-            the eyes report, and every movement changes what is seen next. Deception puts that
-            loop under strain: an action can be shaped to hide its own goal, and an observer has
-            to read intent from motion alone. With Dr. Narjes Soltani at Shahid Beheshti University,
-            I am working toward questions like these:
+            Perception and action are usually studied apart, yet every reach is planned from what
+            the eyes report, and every movement changes what is seen next. Deception strains that
+            loop. An actor can shape a movement to hide its goal; an observer has to infer the goal
+            from the movement alone. With Dr. Narjes Soltani at Shahid Beheshti University, I am
+            framing three questions for MEG:
           </p>
           <ol class="focus__qs">
             <li>How do visual perception and action planning shape each other while a movement is prepared and carried out?</li>
             <li>When an action is meant to deceive, how is the hidden intent encoded in the actor, and how is it perceived by an observer?</li>
-            <li>Can that intent be decoded from MEG — from localized sources and their time–frequency dynamics — and how early?</li>
+            <li>Can that intent be decoded from MEG, from localized sources and their time–frequency dynamics, and how early?</li>
           </ol>
-          <p class="focus__meta">
-            <span>MEG preprocessing</span><span>Source localization</span><span>Time–frequency analysis</span><span>Neural decoding</span>
-          </p>
+          <div class="focus__foot">
+            <p class="focus__meta"><span>MEG preprocessing</span><span>Source localization</span><span>Time–frequency analysis</span><span>Neural decoding</span></p>
+            <button class="trace-btn" type="button" data-topic="brain" aria-pressed="false">Trace this line through the page</button>
+          </div>
         </div>
         <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 260" class="loop">
@@ -259,182 +263,237 @@
             <path class="loop__trace" d="M20 222 h40 l6 -10 l6 18 l6 -26 l6 30 l6 -14 h14 l5 -6 l5 9 h18 l6 -20 l5 28 l6 -16 l5 6 h22 l4 -8 l5 14 l5 -22 l6 26 l5 -12 h16 l5 5 l5 -9 l5 4 h30 l6 -18 l6 24 l5 -10 h26"/>
             <text class="loop__label loop__label--left" x="20" y="252">MEG · decode?</text>
           </svg>
-          <figcaption>Schematic of the questions, not of results.</figcaption>
+          <figcaption>A schematic of the questions. No results are shown.</figcaption>
         </figure>
       </article>
 
-      <div class="theme-list">
-        <article class="theme reveal" data-reveal data-topics="markets" data-key="markets">
-          <span class="theme__no">i.</span>
-          <div class="theme__body">
-            <h3>Decision agents that read more than price</h3>
-            <p>
-              Reinforcement-learning traders that combine price dynamics with fundamentals
-              and financial text, built on transformer and xLSTM backbones, with conservative
-              on-policy diffusion to keep portfolio behaviour stable.
-            </p>
-          </div>
-          <span class="theme__tag">Markets</span>
-        </article>
-        <article class="theme reveal" data-reveal data-topics="structure markets" data-key="structure">
-          <span class="theme__no">ii.</span>
-          <div class="theme__body">
-            <h3>Graphs as a language for time</h3>
-            <p>
-              Graph and hypergraph neural networks that treat co-movement, influence, and
-              regime structure as first-class objects in time-series and market modelling,
-              rather than as features added after the fact.
-            </p>
-          </div>
-          <span class="theme__tag">Structure</span>
-        </article>
-        <article class="theme reveal" data-reveal data-topics="physics" data-key="physics">
-          <span class="theme__no">iii.</span>
-          <div class="theme__body">
-            <h3>Networks that know the equations</h3>
-            <p>
-              Physics-informed Kolmogorov–Arnold architectures, including PG-KINN, for forward
-              and inverse PDE problems — where a Petrov–Galerkin formulation and learnable
-              univariate functions are designed to work together.
-            </p>
-          </div>
-          <span class="theme__tag">Physics</span>
-        </article>
-        <article class="theme reveal" data-reveal data-topics="brain" data-key="brain">
-          <span class="theme__no">iv.</span>
-          <div class="theme__body">
-            <h3>Reading cortical dynamics</h3>
-            <p>
-              MEG pipelines from preprocessing to source localization and decoding, using
-              spectral and time–frequency analysis to study activity linked to visual
-              perception and cognitive processing — the groundwork for the vision–action
-              questions above.
-            </p>
-          </div>
-          <span class="theme__tag">Brain signals</span>
-        </article>
-        <article class="theme reveal" data-reveal data-topics="chain" data-key="chain">
-          <span class="theme__no">v.</span>
-          <div class="theme__body">
-            <h3>Protocols under adversarial conditions</h3>
-            <p>
-              Ethereum protocol design, consensus mechanisms, Solidity contracts, and
-              on-chain transaction modelling, read through the security questions that
-              cryptocurrency and DeFi infrastructure raise.
-            </p>
-          </div>
-          <span class="theme__tag">Protocols</span>
-        </article>
+      <div class="program sec-body">
+        <div class="theme-list">
+          <article class="theme reveal" data-reveal data-topics="markets" data-key="markets">
+            <span class="theme__no" aria-hidden="true">i</span>
+            <div class="theme__body">
+              <p class="theme__tag">Markets</p>
+              <h3><button class="theme__btn" type="button" data-topic="markets" aria-pressed="false">Trading agents that read more than price</button></h3>
+              <p>
+                Reinforcement-learning agents for trading and portfolio allocation that combine price
+                dynamics with company fundamentals and financial text. The backbones are transformers
+                and xLSTM; a conservative on-policy diffusion policy is meant to keep portfolio
+                behaviour stable.
+              </p>
+            </div>
+          </article>
+          <article class="theme reveal" data-reveal data-topics="structure" data-key="structure">
+            <span class="theme__no" aria-hidden="true">ii</span>
+            <div class="theme__body">
+              <p class="theme__tag">Structure</p>
+              <h3><button class="theme__btn" type="button" data-topic="structure" aria-pressed="false">Relations as part of the model</button></h3>
+              <p>
+                Graph and hypergraph neural networks in which co-movement, influence, and regime
+                structure among assets are modelled directly, not appended as features after the fact.
+              </p>
+            </div>
+          </article>
+          <article class="theme reveal" data-reveal data-topics="physics" data-key="physics">
+            <span class="theme__no" aria-hidden="true">iii</span>
+            <div class="theme__body">
+              <p class="theme__tag">Physics</p>
+              <h3><button class="theme__btn" type="button" data-topic="physics" aria-pressed="false">Networks bound by their equations</button></h3>
+              <p>
+                Physics-informed Kolmogorov–Arnold networks for forward and inverse PDE problems.
+                In PG-KINN, a Petrov–Galerkin weak formulation is paired with the learnable
+                univariate functions of a KAN.
+              </p>
+            </div>
+          </article>
+          <article class="theme reveal" data-reveal data-topics="brain" data-key="brain">
+            <span class="theme__no" aria-hidden="true">iv</span>
+            <div class="theme__body">
+              <p class="theme__tag">Brain signals</p>
+              <h3><button class="theme__btn" type="button" data-topic="brain" aria-pressed="false">From raw MEG to decodable signal</button></h3>
+              <p>
+                Pipelines for MEG preprocessing, source localization, and decoding, with spectral
+                and time–frequency analysis of activity related to visual perception and cognition.
+                This is the groundwork for the vision–action questions above.
+              </p>
+            </div>
+          </article>
+          <article class="theme reveal" data-reveal data-topics="chain" data-key="chain">
+            <span class="theme__no" aria-hidden="true">v</span>
+            <div class="theme__body">
+              <p class="theme__tag">Protocols</p>
+              <h3><button class="theme__btn" type="button" data-topic="chain" aria-pressed="false">Systems that must hold against adversaries</button></h3>
+              <p>
+                Ethereum protocol design, consensus mechanisms, Solidity contracts, and on-chain
+                transaction modelling, studied through the security questions that cryptocurrency
+                and DeFi infrastructure raise.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="map reveal" data-reveal aria-labelledby="map-title">
+          <h3 id="map-title" class="map__title">Program map</h3>
+          <p class="map__hint">Each line of work, and the manuscripts and appointments it runs through. Select a row to trace it across the page.</p>
+          <table class="map__table">
+            <caption class="sr-only">Lines of work and the manuscripts and appointments they connect to</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col"><a href="#pub-1"><span>[1] xLSTM trading</span></a></th>
+                <th scope="col"><a href="#pub-2"><span>[2] Multimodal portfolio</span></a></th>
+                <th scope="col"><a href="#pub-3"><span>[3] PG-KINN</span></a></th>
+                <th scope="col" class="map__gap"><a href="#appt-ipm"><span>IPM</span></a></th>
+                <th scope="col"><a href="#appt-chain"><span>SBU · Blockchain</span></a></th>
+                <th scope="col"><a href="#appt-neuro"><span>SBU · Neuroscience</span></a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-row="markets">
+                <th scope="row"><button class="map__btn" type="button" data-topic="markets" aria-pressed="false">Markets</button></th>
+                <td class="on"><span class="sr-only">linked</span></td><td class="on"><span class="sr-only">linked</span></td><td></td>
+                <td class="on map__gap"><span class="sr-only">linked</span></td><td></td><td></td>
+              </tr>
+              <tr data-row="structure">
+                <th scope="row"><button class="map__btn" type="button" data-topic="structure" aria-pressed="false">Structure</button></th>
+                <td></td><td></td><td></td>
+                <td class="on map__gap"><span class="sr-only">linked</span></td><td></td><td></td>
+              </tr>
+              <tr data-row="physics">
+                <th scope="row"><button class="map__btn" type="button" data-topic="physics" aria-pressed="false">Physics</button></th>
+                <td></td><td></td><td class="on"><span class="sr-only">linked</span></td>
+                <td class="on map__gap"><span class="sr-only">linked</span></td><td></td><td></td>
+              </tr>
+              <tr data-row="brain">
+                <th scope="row"><button class="map__btn" type="button" data-topic="brain" aria-pressed="false">Brain signals</button></th>
+                <td></td><td></td><td></td>
+                <td class="map__gap"></td><td></td><td class="on"><span class="sr-only">linked</span></td>
+              </tr>
+              <tr data-row="chain">
+                <th scope="row"><button class="map__btn" type="button" data-topic="chain" aria-pressed="false">Protocols</button></th>
+                <td></td><td></td><td></td>
+                <td class="map__gap"></td><td class="on"><span class="sr-only">linked</span></td><td></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="map__status" id="filterStatus" aria-live="polite"></p>
+        </aside>
       </div>
     </section>
 
     <section class="section" id="writing" aria-labelledby="writing-title">
-      <div class="section__intro section__intro--split">
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">03</span><span class="sec-mark__label">Publications</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head sec-head--split">
         <div>
-          <p class="kicker"><span class="kicker__no">03</span>Publications</p>
-          <h2 id="writing-title">Manuscripts and preprints</h2>
+          <p class="sec-head__label">Publications</p>
+          <h2 id="writing-title">Manuscripts</h2>
+          <p class="sec-head__frame">Two journal submissions under review and one preprint, each co-authored with Dr. Dara Rahmati.</p>
         </div>
         <a class="text-link" href="https://scholar.google.com/citations?user=js3rIYIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Full record on Google Scholar <span aria-hidden="true">↗</span></a>
-      </div>
+      </header>
 
-      <ol class="writing-list">
-        <li class="writing reveal" data-reveal data-topics="markets">
-          <span class="writing__index" aria-hidden="true">[1]</span>
+      <ol class="writing-list sec-body">
+        <li class="writing reveal" id="pub-1" data-reveal data-topics="markets">
+          <span class="writing__index" aria-hidden="true">1</span>
           <div class="writing__meta">
             <span class="badge">Under review</span>
             <span><i>Applied Soft Computing</i> · Elsevier</span>
             <span class="writing__extra">Preprint on SSRN</span>
+            <span class="writing__extra">First author</span>
           </div>
           <h3>Automated Stock Trading Using Deep Reinforcement Learning and Fused xLSTM Networks</h3>
           <p class="writing__by"><b>N. Soltani</b>, A. Sadr, A. Pakniyat, K. Pakzad, D. Rahmati</p>
-          <p class="writing__note">A PPO trading agent built on fused xLSTM memory, aimed at sequential decisions in nonstationary markets.</p>
+          <p class="writing__note">Uses fused xLSTM networks as the memory of a PPO agent that makes sequential trading decisions in nonstationary markets.</p>
         </li>
-        <li class="writing reveal" data-reveal data-topics="markets">
-          <span class="writing__index" aria-hidden="true">[2]</span>
+        <li class="writing reveal" id="pub-2" data-reveal data-topics="markets">
+          <span class="writing__index" aria-hidden="true">2</span>
           <div class="writing__meta">
             <span class="badge">Under review</span>
             <span><i>Expert Systems with Applications</i> · Elsevier</span>
           </div>
           <h3>Robust Multimodal Portfolio Trading Using Transformer-Based PPO: Technical–Fundamental Fusion with Conservative On-Policy Diffusion</h3>
           <p class="writing__by">D. Rahmati, <b>N. Soltani</b>, A. Sadr</p>
-          <p class="writing__note">Transformer-based fusion of technical and fundamental signals, with diffusion policies trained conservatively on-policy.</p>
+          <p class="writing__note">Fuses technical and fundamental signals in a transformer-based PPO agent for portfolio trading, and trains its diffusion policy conservatively on-policy for robustness.</p>
         </li>
-        <li class="writing reveal" data-reveal data-topics="physics">
-          <span class="writing__index" aria-hidden="true">[3]</span>
+        <li class="writing reveal" id="pub-3" data-reveal data-topics="physics">
+          <span class="writing__index" aria-hidden="true">3</span>
           <div class="writing__meta">
             <span class="badge badge--soft">Preprint</span>
             <span>arXiv</span>
           </div>
           <h3>PG-KINN: A Physics-Informed Petrov–Galerkin Kolmogorov–Arnold Network for Solving Forward and Inverse PDEs</h3>
           <p class="writing__by">A. Sadr, <b>N. Soltani</b>, V. Moghtadaiee, A. Pakniyat, D. Rahmati, S. Gorgin</p>
-          <p class="writing__note">Kolmogorov–Arnold networks combined with a Petrov–Galerkin weak formulation for forward and inverse PDE problems.</p>
+          <p class="writing__note">Couples Kolmogorov–Arnold networks with a Petrov–Galerkin weak formulation, so that forward and inverse PDE problems are solved within one physics-informed framework.</p>
         </li>
       </ol>
     </section>
 
     <section class="section" id="appointments" aria-labelledby="appointments-title">
-      <div class="section__intro">
-        <p class="kicker"><span class="kicker__no">04</span>Appointments</p>
-        <h2 id="appointments-title">Three research groups, three mentors</h2>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">04</span><span class="sec-mark__label">Appointments</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">Appointments</p>
+        <h2 id="appointments-title">Three groups, three kinds of signal</h2>
+        <p class="sec-head__frame">Market data and equations at IPM; transaction ledgers and neural recordings at Shahid Beheshti.</p>
+      </header>
+
+      <div class="timeline sec-body reveal" data-reveal role="img" aria-label="Timeline: B.Sc. and IPM from 2023, blockchain group from 2024, teaching from September 2024, neuroscience group from 2026, all continuing.">
+        <div class="timeline__axis" aria-hidden="true"><span>2023</span><span>2024</span><span>2025</span><span>2026</span><span class="timeline__now">now</span></div>
+        <div class="lane" style="--s:0" data-topics="markets structure physics"><span class="lane__label">IPM · Rahmati</span><span class="lane__bar"></span></div>
+        <div class="lane" style="--s:1" data-topics="chain"><span class="lane__label">SBU · Mosharraf</span><span class="lane__bar"></span></div>
+        <div class="lane" style="--s:3" data-topics="brain"><span class="lane__label">SBU · N. Soltani</span><span class="lane__bar lane__bar--signal"></span></div>
+        <div class="lane lane--quiet" style="--s:1.67"><span class="lane__label">Teaching</span><span class="lane__bar"></span></div>
+        <div class="lane lane--quiet" style="--s:0"><span class="lane__label">B.Sc.</span><span class="lane__bar"></span></div>
       </div>
 
-      <div class="appointments">
-        <article class="appointment reveal" data-reveal data-topics="markets structure physics">
-          <div class="appointment__when">
-            <time datetime="2023">2023</time><span>to present</span>
-          </div>
+      <div class="appointments sec-body">
+        <article class="appointment reveal" id="appt-ipm" data-reveal data-topics="markets structure physics">
+          <p class="appointment__when"><time datetime="2023">2023</time> to present</p>
           <div>
             <h3>Institute for Research in Fundamental Sciences (IPM)</h3>
             <p class="appointment__place">Research Assistant · with Dr. Dara Rahmati</p>
             <p>
-              Deep reinforcement learning and multimodal systems for market modelling and
-              automated trading: MTDP-PPO, which fuses modalities through transformers and
-              diffusion policies; fused xLSTM–PPO agents; PG-KINN for PDEs; and graph and
-              hypergraph models of market dynamics.
+              Deep reinforcement learning and multimodal models for market modelling and automated
+              trading: MTDP-PPO, which fuses modalities through transformers and diffusion policies;
+              fused xLSTM–PPO agents; graph and hypergraph models of market dynamics; and PG-KINN
+              for PDEs.
             </p>
           </div>
         </article>
-        <article class="appointment reveal" data-reveal data-topics="chain">
-          <div class="appointment__when">
-            <time datetime="2024">2024</time><span>to present</span>
-          </div>
+        <article class="appointment reveal" id="appt-chain" data-reveal data-topics="chain">
+          <p class="appointment__when"><time datetime="2024">2024</time> to present</p>
           <div>
             <h3>Shahid Beheshti University · Blockchain systems</h3>
             <p class="appointment__place">Research Assistant · with Dr. Maedeh Mosharraf</p>
             <p>
-              Blockchain architectures and Ethereum protocol design, Solidity smart contracts,
-              consensus mechanisms, on-chain transaction modelling, and the security analysis
-              of cryptocurrency and DeFi infrastructure.
+              Blockchain architecture and Ethereum protocol design, Solidity smart contracts,
+              consensus mechanisms, on-chain transaction modelling, and the security analysis of
+              cryptocurrency and DeFi infrastructure.
             </p>
           </div>
         </article>
-        <article class="appointment reveal" data-reveal data-topics="brain">
-          <div class="appointment__when">
-            <time datetime="2026">2026</time><span>to present</span>
-          </div>
+        <article class="appointment reveal" id="appt-neuro" data-reveal data-topics="brain">
+          <p class="appointment__when"><time datetime="2026">2026</time> to present</p>
           <div>
             <h3>Shahid Beheshti University · Computational neuroscience</h3>
             <p class="appointment__place">Research Assistant · with Dr. Narjes Soltani</p>
             <p>
-              Computational pipelines for MEG preprocessing, source localization, and neural
-              decoding, using machine learning and spectral and time–frequency analysis to study
-              brain activity related to visual perception and cognition. Current direction: the
-              interaction of vision and action, with a focus on how deceptive intent is encoded,
-              perceived, and possibly decoded.
+              Pipelines for MEG preprocessing, source localization, and neural decoding, combining
+              machine learning with spectral and time–frequency analysis of activity related to
+              visual perception and cognition. The current direction is the interaction of vision
+              and action, and how deceptive intent is encoded, perceived, and possibly decoded.
             </p>
           </div>
         </article>
       </div>
 
-      <div class="education reveal" data-reveal>
+      <div class="education sec-body reveal" data-reveal>
         <div class="education__item">
-          <p class="kicker kicker--light">Education</p>
+          <p class="education__label">Education</p>
           <h3>B.Sc. Computer Engineering</h3>
           <p>Shahid Beheshti University, Tehran · 2023–present</p>
           <p class="education__mark">GPA 3.6 / 4.0</p>
         </div>
         <div class="education__item">
-          <p class="kicker kicker--light">Before university</p>
+          <p class="education__label">Before university</p>
           <h3>Diploma in Mathematics &amp; Physics</h3>
           <p>Sampad (National Organization for Development of Exceptional Talents), Zanjan · 2020–2023</p>
           <p class="education__mark">Top 0.2% · National University Entrance Exam</p>
@@ -443,253 +502,145 @@
     </section>
 
     <section class="section" id="teaching" aria-labelledby="teaching-title">
-      <div class="section__intro">
-        <p class="kicker"><span class="kicker__no">05</span>Teaching</p>
-        <h2 id="teaching-title">Thirty-four course sections at three universities</h2>
-        <p class="lede">
-          Teaching assistantships at Sharif University of Technology, Shahid Beheshti University,
-          and Amirkabir University of Technology since 2024 — from first-year programming to
-          graduate courses in blockchain technology, experimental design, and signals and control,
-          including six head-TA appointments.
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">05</span><span class="sec-mark__label">Teaching</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">Teaching</p>
+        <h2 id="teaching-title">Thirty-four sections at three universities</h2>
+        <p class="sec-head__frame">
+          Teaching assistantships since 2024, from first-year programming to graduate courses in
+          blockchain technology, experimental design, and signals and digital control; six as head TA.
+          Every section is listed with its own instructor and term.
         </p>
+      </header>
+
+      <div class="explorer sec-body" id="explorer">
+        <div class="explorer__controls" role="group" aria-label="Filter teaching sections">
+          <div class="seg" role="group" aria-label="University">
+            <button type="button" data-inst="all" aria-pressed="true">All <span>34</span></button>
+            <button type="button" data-inst="sharif" aria-pressed="false">Sharif <span>14</span></button>
+            <button type="button" data-inst="aut" aria-pressed="false">Amirkabir <span>1</span></button>
+            <button type="button" data-inst="sbu" aria-pressed="false">Shahid Beheshti <span>19</span></button>
+          </div>
+          <div class="seg seg--toggles" role="group" aria-label="Role and level">
+            <button type="button" data-flag="head" aria-pressed="false">Head TA</button>
+            <button type="button" data-flag="grad" aria-pressed="false">Graduate</button>
+          </div>
+        </div>
+        <div class="waffle" id="waffle" aria-label="Sections per term; select a term to filter" role="group"></div>
+        <p class="explorer__status" id="teachStatus" aria-live="polite">Showing all 34 sections</p>
+
+        <div class="term" data-term="t5">
+          <h3 class="term__title">Sep 2026–Feb 2027 <span class="term__count">10 sections</span></h3>
+          <ul class="term__rows">
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Data Mining</span><span class="course__who">Dr. Mohammad Khalooei</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Compiler</span><span class="course__who">Ms. Samane Hosseinmardi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Machine Learning Systems Engineering</span><span class="course__who">Dr. Maryam Ramezani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="aut"><span class="tr__inst">Amirkabir</span><span class="course">Data Mining</span><span class="course__who">Dr. Behnam Yousefimehr</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sbu" data-head data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Principles of Design and Analysis of Experiments <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Narjes Soltani Dehaghani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sbu" data-head data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Signals and Systems and Digital Control <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Zeinab Pourbafarani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Database</span><span class="course__who">Dr. Hassan Haghighi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Engineering Probability and Statistics <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Narjes Soltani Dehaghani</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+            <li data-inst="sbu" data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Blockchain Technology <em class="tag">Graduate</em></span><span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span><span class="course__when">Sep 2026–Feb 2027</span></li>
+          </ul>
+        </div>
+
+        <div class="term" data-term="t4">
+          <h3 class="term__title">Feb–Jul 2026 <span class="term__count">7 sections</span></h3>
+          <ul class="term__rows">
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Shahin Hessabi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Scientific and Technical Presentation</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li data-inst="sbu" data-grad><span class="tr__inst">Shahid Beheshti</span><span class="course">Blockchain Technology <em class="tag">Graduate</em></span><span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Linear Algebra <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Farokhlagha Moazami Goodarzi</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Data Mining <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Ahmad-Ali Abin</span><span class="course__when">Feb–Jul 2026</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Advanced Programming</span><span class="course__who">Dr. Mojtaba Vahidi Asl</span><span class="course__when">Feb–Jul 2026</span></li>
+          </ul>
+        </div>
+
+        <div class="term" data-term="t3">
+          <h3 class="term__title">Sep 2025–Feb 2026 <span class="term__count">7 sections</span></h3>
+          <ul class="term__rows">
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Logic Circuits</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Nazari</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Data Structures and Algorithms</span><span class="course__who">Dr. Ahmad-Ali Abin</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Programming</span><span class="course__who">Dr. Zeinab Pourbafarani</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li data-inst="sbu" data-head><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Programming <em class="tag tag--head">Head TA</em></span><span class="course__who">Dr. Mahdi Mojahedi</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Dara Rahmati</span><span class="course__when">Sep 2025–Feb 2026</span></li>
+          </ul>
+        </div>
+
+        <div class="term" data-term="t2">
+          <h3 class="term__title">Jan–Jun 2025 <span class="term__count">8 sections</span></h3>
+          <ul class="term__rows">
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Laleh Arshadi</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Ms. Marziyeh Sadri</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Zarei</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Formal Languages and Automata Theory</span><span class="course__who">Dr. Ramak Ghavami Zadeh</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Computer Architecture</span><span class="course__who">Dr. Razieh Salarifard</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Advanced Programming</span><span class="course__who">Dr. Sadegh Aliakbari</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Advanced Programming</span><span class="course__who">Dr. Mojtaba Vahidi Asl</span><span class="course__when">Jan–Jun 2025</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Fundamentals of Programming</span><span class="course__who">Dr. Monireh Abdoos</span><span class="course__when">Jan–Jun 2025</span></li>
+          </ul>
+        </div>
+
+        <div class="term" data-term="t1">
+          <h3 class="term__title">Sep 2024–Jan 2025 <span class="term__count">2 sections</span></h3>
+          <ul class="term__rows">
+            <li data-inst="sharif"><span class="tr__inst">Sharif</span><span class="course">Fundamentals of Programming</span><span class="course__who">Mr. Mohammad Nazari</span><span class="course__when">Sep 2024–Jan 2025</span></li>
+            <li data-inst="sbu"><span class="tr__inst">Shahid Beheshti</span><span class="course">Applied Computer Skills</span><span class="course__who">Dr. Hamed Malek</span><span class="course__when">Sep 2024–Jan 2025</span></li>
+          </ul>
+        </div>
+        <p class="explorer__empty" id="teachEmpty" hidden>No sections match this combination of filters.</p>
       </div>
 
-      <div class="teach-board">
-        <div class="teach-stack">
-        <div class="teach-col reveal" data-reveal>
-          <h3><span>Sharif University of Technology</span><span class="teach-col__count">14 sections</span></h3>
-          <ul>
-            <li>
-              <span class="course">Data Mining</span>
-              <span class="course__who">Dr. Mohammad Khalooei</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Compiler</span>
-              <span class="course__who">Ms. Samane Hosseinmardi</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Machine Learning Systems Engineering</span>
-              <span class="course__who">Dr. Maryam Ramezani</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Logic Circuits</span>
-              <span class="course__who">Dr. Laleh Arshadi</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Logic Circuits</span>
-              <span class="course__who">Dr. Shahin Hessabi</span>
-              <span class="course__when">Feb–Jul 2026</span>
-            </li>
-            <li>
-              <span class="course">Logic Circuits</span>
-              <span class="course__who">Dr. Laleh Arshadi</span>
-              <span class="course__when">Feb–Jul 2026</span>
-            </li>
-            <li>
-              <span class="course">Scientific and Technical Presentation</span>
-              <span class="course__who">Dr. Laleh Arshadi</span>
-              <span class="course__when">Feb–Jul 2026</span>
-            </li>
-            <li>
-              <span class="course">Computer Architecture</span>
-              <span class="course__who">Dr. Laleh Arshadi</span>
-              <span class="course__when">Sep 2025–Feb 2026</span>
-            </li>
-            <li>
-              <span class="course">Logic Circuits</span>
-              <span class="course__who">Dr. Laleh Arshadi</span>
-              <span class="course__when">Sep 2025–Feb 2026</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Programming</span>
-              <span class="course__who">Mr. Mohammad Nazari</span>
-              <span class="course__when">Sep 2025–Feb 2026</span>
-            </li>
-            <li>
-              <span class="course">Computer Architecture</span>
-              <span class="course__who">Dr. Laleh Arshadi</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Programming</span>
-              <span class="course__who">Ms. Marziyeh Sadri</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Programming</span>
-              <span class="course__who">Mr. Mohammad Zarei</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Programming</span>
-              <span class="course__who">Mr. Mohammad Nazari</span>
-              <span class="course__when">Sep 2024–Jan 2025</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="teach-col reveal" data-reveal>
-          <h3><span>Amirkabir University of Technology</span><span class="teach-col__count">1 section</span></h3>
-          <ul>
-            <li>
-              <span class="course">Data Mining</span>
-              <span class="course__who">Dr. Behnam Yousefimehr</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="workshop reveal" data-reveal>
-          <h3>Beyond the weekly section</h3>
-          <dl class="workshop__grid">
-            <div>
-              <dt>Workshops</dt>
-              <dd>Pointers, dynamic memory, and recursion; Java OOP, STL containers, and Unity game development; graph traversal and dynamic programming; Ethereum smart contracts and blockchain security for the graduate course.</dd>
-            </div>
-            <div>
-              <dt>Lectures</dt>
-              <dd>Substitute lectures on instruction set architecture and MIPS assembly in Computer Architecture.</dd>
-            </div>
-            <div>
-              <dt>Service</dt>
-              <dd>Volunteer mentor for first-year students at SBU; secretariat member of the 1st International Conference on Artificial Intelligence, Tehran, February 2025.</dd>
-            </div>
-          </dl>
-        </div>
-        </div>
-
-        <div class="teach-col reveal" data-reveal>
-          <h3><span>Shahid Beheshti University</span><span class="teach-col__count">19 sections</span></h3>
-          <ul>
-            <li>
-              <span class="course">Principles of Design and Analysis of Experiments <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span>
-              <span class="course__who">Dr. Narjes Soltani Dehaghani</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Signals and Systems and Digital Control <em class="tag">Graduate</em> <em class="tag tag--head">Head TA</em></span>
-              <span class="course__who">Dr. Zeinab Pourbafarani</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Database</span>
-              <span class="course__who">Dr. Hassan Haghighi</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Engineering Probability and Statistics <em class="tag tag--head">Head TA</em></span>
-              <span class="course__who">Dr. Narjes Soltani Dehaghani</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Blockchain Technology <em class="tag">Graduate</em></span>
-              <span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span>
-              <span class="course__when">Sep 2026–Feb 2027</span>
-            </li>
-            <li>
-              <span class="course">Blockchain Technology <em class="tag">Graduate</em></span>
-              <span class="course__who">Dr. Maedeh Mosharraf Dehkordi</span>
-              <span class="course__when">Feb–Jul 2026</span>
-            </li>
-            <li>
-              <span class="course">Linear Algebra <em class="tag tag--head">Head TA</em></span>
-              <span class="course__who">Dr. Farokhlagha Moazami Goodarzi</span>
-              <span class="course__when">Feb–Jul 2026</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Data Mining <em class="tag tag--head">Head TA</em></span>
-              <span class="course__who">Dr. Ahmad-Ali Abin</span>
-              <span class="course__when">Feb–Jul 2026</span>
-            </li>
-            <li>
-              <span class="course">Advanced Programming</span>
-              <span class="course__who">Dr. Mojtaba Vahidi Asl</span>
-              <span class="course__when">Feb–Jul 2026</span>
-            </li>
-            <li>
-              <span class="course">Data Structures and Algorithms</span>
-              <span class="course__who">Dr. Ahmad-Ali Abin</span>
-              <span class="course__when">Sep 2025–Feb 2026</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Programming</span>
-              <span class="course__who">Dr. Zeinab Pourbafarani</span>
-              <span class="course__when">Sep 2025–Feb 2026</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Programming <em class="tag tag--head">Head TA</em></span>
-              <span class="course__who">Dr. Mahdi Mojahedi</span>
-              <span class="course__when">Sep 2025–Feb 2026</span>
-            </li>
-            <li>
-              <span class="course">Computer Architecture</span>
-              <span class="course__who">Dr. Dara Rahmati</span>
-              <span class="course__when">Sep 2025–Feb 2026</span>
-            </li>
-            <li>
-              <span class="course">Formal Languages and Automata Theory</span>
-              <span class="course__who">Dr. Ramak Ghavami Zadeh</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Computer Architecture</span>
-              <span class="course__who">Dr. Razieh Salarifard</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Advanced Programming</span>
-              <span class="course__who">Dr. Sadegh Aliakbari</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Advanced Programming</span>
-              <span class="course__who">Dr. Mojtaba Vahidi Asl</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Fundamentals of Programming</span>
-              <span class="course__who">Dr. Monireh Abdoos</span>
-              <span class="course__when">Jan–Jun 2025</span>
-            </li>
-            <li>
-              <span class="course">Applied Computer Skills</span>
-              <span class="course__who">Dr. Hamed Malek</span>
-              <span class="course__when">Sep 2024–Jan 2025</span>
-            </li>
-          </ul>
-        </div>
+      <div class="workshop sec-body reveal" data-reveal>
+        <h3>Outside the weekly section</h3>
+        <dl class="workshop__grid">
+          <div>
+            <dt>Workshops</dt>
+            <dd>Pointers, dynamic memory, and recursion; Java OOP, STL containers, and Unity game development; graph traversal and dynamic programming; Ethereum smart contracts and blockchain security for the graduate course.</dd>
+          </div>
+          <div>
+            <dt>Lectures</dt>
+            <dd>Substitute lectures on instruction set architecture and MIPS assembly in Computer Architecture.</dd>
+          </div>
+          <div>
+            <dt>Service</dt>
+            <dd>Volunteer mentor for first-year students at SBU; secretariat member of the 1st International Conference on Artificial Intelligence, Tehran, February 2025.</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
     <section class="section" id="studio" aria-labelledby="studio-title">
-      <div class="section__intro">
-        <p class="kicker"><span class="kicker__no">06</span>Course projects</p>
-        <h2 id="studio-title">Smaller builds, from search trees to silicon</h2>
-      </div>
-      <div class="studio-grid">
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">06</span><span class="sec-mark__label">Projects</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">Course projects</p>
+        <h2 id="studio-title">From game trees to a pipelined processor</h2>
+        <p class="sec-head__frame">Six builds from coursework, each small enough to finish and specific enough to test.</p>
+      </header>
+      <div class="studio-grid sec-body">
         <article class="studio reveal" data-reveal>
           <p class="studio__course">Artificial Intelligence</p>
           <h3>Adversarial game agent</h3>
-          <p>Minimax with alpha–beta pruning, heuristic evaluation, and depth-limited search, with experiments on the trade-off between speed and optimality.</p>
+          <p>Minimax with alpha–beta pruning, a heuristic evaluation function, and depth-limited search, with experiments on the trade-off between speed and optimality.</p>
         </article>
         <article class="studio reveal" data-reveal>
           <p class="studio__course">Linear Algebra</p>
           <h3>SVD recommender</h3>
-          <p>SVD computed by iterative numerical methods, PCA for latent factors, and evaluation by RMSE and MAE with embedding visualizations.</p>
+          <p>Singular value decomposition computed by iterative numerical methods, PCA for latent factors, and evaluation by RMSE and MAE, with visualizations of the learned embeddings.</p>
         </article>
         <article class="studio reveal" data-reveal>
           <p class="studio__course">Operating Systems</p>
           <h3>Virtual memory simulator</h3>
-          <p>LRU and Second Chance replacement under varying page size and physical memory, analysed over repeated runs.</p>
+          <p>LRU and Second Chance page replacement compared across page sizes and physical-memory budgets over repeated runs.</p>
         </article>
         <article class="studio reveal" data-reveal>
           <p class="studio__course">Computer Architecture</p>
           <h3>SBUMIPS processor</h3>
-          <p>A pipelined MIPS-like processor designed in Verilog and verified in ModelSim simulation.</p>
+          <p>A pipelined MIPS-like processor written in Verilog and verified by simulation in ModelSim.</p>
         </article>
         <article class="studio reveal" data-reveal>
           <p class="studio__course">Advanced Programming</p>
@@ -699,17 +650,18 @@
         <article class="studio reveal" data-reveal>
           <p class="studio__course">Fundamentals of Programming</p>
           <h3>File compression tool</h3>
-          <p>A compression utility with a custom encoding scheme, written with attention to algorithmic efficiency and memory management.</p>
+          <p>A compression utility with a custom encoding scheme, written with attention to running time and memory use.</p>
         </article>
       </div>
     </section>
 
     <section class="section" id="toolkit" aria-labelledby="toolkit-title">
-      <div class="section__intro">
-        <p class="kicker"><span class="kicker__no">07</span>Toolkit</p>
-        <h2 id="toolkit-title">Instruments of the work</h2>
-      </div>
-      <dl class="toolkit reveal" data-reveal>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">07</span><span class="sec-mark__label">Methods</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">Methods &amp; tools</p>
+        <h2 id="toolkit-title">What the work is built with</h2>
+      </header>
+      <dl class="toolkit sec-body reveal" data-reveal>
         <div>
           <dt>Learning</dt>
           <dd>PyTorch, Hugging Face Transformers, scikit-learn, OpenCV; PPO and diffusion policies, xLSTM, graph and hypergraph networks, KANs, PINNs, FinBERT</dd>
@@ -730,16 +682,17 @@
     </section>
 
     <section class="section" id="recognition" aria-labelledby="recognition-title">
-      <div class="section__intro">
-        <p class="kicker"><span class="kicker__no">08</span>Recognition</p>
+      <div class="sec-mark" aria-hidden="true"><span class="sec-mark__no">08</span><span class="sec-mark__label">Recognition</span><span class="sec-mark__track"><i></i></span></div>
+      <header class="sec-head">
+        <p class="sec-head__label">Recognition</p>
         <h2 id="recognition-title">Distinctions, schools, and meetings</h2>
-      </div>
-      <div class="ledger reveal" data-reveal>
+      </header>
+      <div class="ledger sec-body reveal" data-reveal>
         <div class="ledger__col">
           <h3>Distinctions &amp; training</h3>
           <ul>
             <li><span>Top 0.2% in the National University Entrance Exam</span></li>
-            <li><span>NeuroCONNECT Summer School in Computational Neuroscience<small>CONNECT — Community for Neuroscience and Cognitive Techs</small></span><time datetime="2026-08">Aug 2026</time></li>
+            <li><span>NeuroCONNECT Summer School in Computational Neuroscience<small>CONNECT, Community for Neuroscience and Cognitive Techs</small></span><time datetime="2026-08">Aug 2026</time></li>
             <li><span>Advanced Algorithmic Thinking and Data Structures Certificate<small>Quera</small></span></li>
             <li><span>Academic Article Writing Workshop<small>Institute for Advanced Studies in Basic Sciences</small></span></li>
             <li><span>Serious Game Design with a Cognitive Approach<small>Workshop, Shahid Beheshti University</small></span></li>
@@ -762,21 +715,15 @@
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="contact__frame reveal" data-reveal>
         <div class="contact__intro">
-          <p class="kicker kicker--light"><span class="kicker__no">09</span>Correspondence</p>
+          <p class="contact__label"><span>09</span>Correspondence</p>
           <h2 id="contact-title">Write to me</h2>
           <p>
-            Questions about any of the work above, and conversations about possible
-            collaboration, are welcome. Email is the most reliable way to reach me.
+            Questions about the work, and proposals for collaboration, are welcome.
+            Email is the most reliable way to reach me.
           </p>
           <dl class="contact__facts">
-            <div>
-              <dt>Based in</dt>
-              <dd>Tehran, Iran</dd>
-            </div>
-            <div>
-              <dt>Local time</dt>
-              <dd><span id="localTime">—</span> <span class="contact__tz">UTC+3:30</span></dd>
-            </div>
+            <div><dt>Based in</dt><dd>Tehran, Iran</dd></div>
+            <div><dt>Local time</dt><dd><span id="localTime">—</span> <span class="contact__tz">UTC+3:30</span></dd></div>
           </dl>
         </div>
 
@@ -810,8 +757,15 @@
     </section>
   </main>
 
+  <div class="tracer" id="tracer" hidden>
+    <span class="tracer__dot" aria-hidden="true"></span>
+    <span id="tracerText"></span>
+    <button type="button" id="tracerClear">Clear</button>
+  </div>
+
   <footer class="site-footer">
-    <span>© <span id="year">2026</span> Nima Soltani · Shahid Beheshti University, Tehran</span>
+    <span>© <span id="year">2026</span> Nima Soltani · Tehran</span>
+    <span class="site-footer__colophon">Set in Newsreader, Outfit, and IBM Plex Mono. No trackers.</span>
     <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
   </footer>
 

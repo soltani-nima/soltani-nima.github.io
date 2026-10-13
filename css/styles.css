@@ -395,27 +395,6 @@ p, dd, li { text-wrap: pretty; }
   opacity: 0.55;
 }
 
-.hero__eyebrow {
-  grid-column: 1 / -1;
-  margin: 0 0 1.2rem;
-  color: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-ul.hero__eyebrow { display: grid; gap: 0.35rem; margin-bottom: 1.7rem; padding: 0; list-style: none; }
-@media (max-width: 600px) {
-  ul.hero__eyebrow { gap: 0.6rem; }
-  .hero__eyebrow li { display: grid; gap: 0.1rem; }
-  .hero__eyebrow .hero__role::after { display: none; }
-}
-.hero__eyebrow li { display: flex; flex-wrap: wrap; align-items: center; gap: 0.15rem 0.7rem; }
-.hero__role { color: var(--accent); }
-.hero__role::after { content: ""; display: inline-block; width: 1.4rem; height: 1px; margin-left: 0.7rem; background: var(--line-2); vertical-align: middle; }
-.hero__org { color: var(--muted); }
-
 .hero__name {
   grid-column: 1 / -1;
   margin: 0 0 clamp(1.8rem, 4vw, 3rem) -0.04em;

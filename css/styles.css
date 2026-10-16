@@ -1165,13 +1165,6 @@ p, dd, li { text-wrap: pretty; }
   transition: color var(--t) var(--ease);
 }
 .stack__tags li:hover { color: var(--ink); }
-.stack__tags .is-core {
-  padding: 0.02rem 0.42rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 500;
-}
 .stack__tags:focus-visible { outline: none; box-shadow: var(--focus); }
 .langs {
   display: grid;

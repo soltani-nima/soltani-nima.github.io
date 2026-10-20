@@ -55,7 +55,7 @@
       { "@type": "ResearchOrganization", "name": "Institute for Research in Fundamental Sciences (IPM)" }
     ],
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "Shahid Beheshti University" },
-    "knowsAbout": ["Deep reinforcement learning", "Multimodal learning", "Physics-informed neural networks", "Neural operators", "Power-system dynamics", "Graph neural networks", "MEG signal processing", "Blockchain systems"],
+    "knowsAbout": ["Deep reinforcement learning", "Multimodal learning", "Physics-informed neural networks", "Neural operators", "Power-system dynamics", "Graph neural networks", "MEG signal processing", "EEG signal processing", "Blockchain systems"],
     "sameAs": [
       "https://scholar.google.com/citations?user=js3rIYIAAAAJ&hl=en",
       "https://www.researchgate.net/profile/Nima-Soltani-5",
@@ -336,7 +336,7 @@
           <div class="focus__text">
             <h3 id="area-physics-title">Networks bound by their equations</h3>
             <p class="focus__lead">
-              A network fitted only to data can match its samples while breaking the physics that produced them. Physics-informed learning puts the governing equations into training. In PG-KINN [4], a Petrov–Galerkin weak formulation is paired with Kolmogorov–Arnold networks, whose learnable univariate functions replace fixed activations, to solve forward and inverse PDE problems in one framework. The same idea, applied to operators, carries the power-systems work [3]. The directions:
+              A network fitted only to data can match its samples while breaking the physics that produced them. Physics-informed learning puts the governing equations into training. In PG-KINN [5], a Petrov–Galerkin weak formulation is paired with Kolmogorov–Arnold networks, whose learnable univariate functions replace fixed activations, to solve forward and inverse PDE problems in one framework. The same idea, applied to operators, carries the power-systems work [3]. The directions:
             </p>
             <ol class="focus__qs">
             <li>When does a weak, Petrov–Galerkin form of the residual train more reliably than the pointwise residual of standard physics-informed networks?</li>
@@ -424,7 +424,8 @@
             <li>What do spectral and time–frequency analyses, together with decoding models, reveal about when and where perceptual information is represented?</li>
             </ol>
             <div class="focus__foot">
-              <p class="focus__meta"><span>MEG</span><span>Preprocessing</span><span>Source localization</span><span>Neural decoding</span><span>Time–frequency analysis</span></p>            </div>
+              <p class="focus__meta"><span>MEG</span><span>EEG</span><span>Preprocessing</span><span>Source localization</span><span>Neural decoding</span><span>Time–frequency analysis</span></p>
+            </div>
           </div>
           <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">
@@ -538,8 +539,19 @@
           <p class="writing__by"><b>N. Soltani</b>, A. Sadr, D. Rahmati</p>
           <p class="writing__note">Learns one operator that maps a generator&rsquo;s initial rotor angle, speed, and mechanical power to its full swing trajectory, matching the initial state exactly and keeping predictions consistent with the swing equation.</p>
         </li>
-        <li class="writing reveal" id="pub-4" data-reveal data-topics="physics">
+        <li class="writing reveal" id="pub-4" data-reveal data-topics="brain">
           <span class="writing__index" aria-hidden="true">4</span>
+          <div class="writing__meta">
+            <span class="badge">Under review</span>
+            <span><i>Biomedical Signal Processing and Control</i> · Elsevier</span>
+            <span class="writing__extra">First author</span>
+          </div>
+          <h3>A Lightweight xLSTM-BLS Method with Non-linear Feature Fusion for Accurate Epileptic Seizure Detection Using EEG Signals</h3>
+          <p class="writing__by"><b>N. Soltani</b>, M. Eidi, A. Sadr, D. Rahmati</p>
+          <p class="writing__note">Fuses a tri-domain EEG feature bank and nonlinear complexity measures with a compact xLSTM encoder and a Broad Learning System classifier for epileptic seizure detection.</p>
+        </li>
+        <li class="writing reveal" id="pub-5" data-reveal data-topics="physics">
+          <span class="writing__index" aria-hidden="true">5</span>
           <div class="writing__meta">
             <span class="badge badge--soft">Preprint</span>
             <span>arXiv</span>

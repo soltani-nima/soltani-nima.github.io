@@ -1217,11 +1217,27 @@ p, dd, li { text-wrap: pretty; }
 }
 
 /* Workshops and service */
-.outreach { display: grid; gap: clamp(2rem, 4vw, 2.8rem); }
+.section--workshops {
+  padding-top: clamp(4.2rem, 9vw, 7rem);
+  padding-bottom: clamp(4.2rem, 9vw, 7rem);
+}
+.section--workshops .sec-mark__track { height: clamp(3.2rem, 6vw, 4.5rem); }
+.sec-head--workshops { margin-bottom: clamp(2.4rem, 5vw, 3.6rem); max-width: 54rem; }
+.section--workshops h2 {
+  font-size: clamp(2.05rem, 4.2vw, 3.15rem);
+  letter-spacing: -0.02em;
+}
+.section--workshops .sec-head__frame {
+  margin-top: 0.85rem;
+  font-size: clamp(1.02rem, 1.6vw, 1.12rem);
+  line-height: 1.55;
+  max-width: 42rem;
+}
+.outreach { display: grid; gap: clamp(2.4rem, 5vw, 3.4rem); }
 .outreach__group { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: clamp(1rem, 3vw, 2rem); border-top: 1.5px solid var(--ink); }
 .outreach__type {
   margin: 0;
-  padding-top: 1.05rem;
+  padding-top: 1.2rem;
   color: var(--signal);
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -1232,7 +1248,7 @@ p, dd, li { text-wrap: pretty; }
 .talks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
 .talk {
   position: relative;
-  padding: 1.05rem 1.3rem 1.25rem 0;
+  padding: 1.25rem 1.3rem 1.45rem 0;
   border-bottom: 1px solid var(--line);
 }
 .talk:nth-child(2n) { padding-left: 1.3rem; padding-right: 0; border-left: 1px solid var(--line); }
@@ -1250,8 +1266,8 @@ p, dd, li { text-wrap: pretty; }
 }
 .talk:hover::after { transform: scaleX(1); }
 .talk__course { margin: 0 0 0.4rem; color: var(--accent); font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; line-height: 1.5; text-transform: uppercase; }
-.talk h4 { margin: 0 0 0.35rem; font-family: var(--display); font-size: 1.18rem; font-weight: 500; line-height: 1.25; }
-.talk p:last-child { margin: 0; max-width: 40rem; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.talk h4 { margin: 0 0 0.45rem; font-family: var(--display); font-size: 1.22rem; font-weight: 500; line-height: 1.25; }
+.talk p:last-child { margin: 0; max-width: 42rem; color: var(--muted); font-size: 0.95rem; line-height: 1.55; }
 .talk code { font-family: var(--mono); font-size: 0.82em; color: var(--ink-2); }
 .service { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.3rem; margin: 0; padding: 0; list-style: none; }
 .service li {
@@ -1259,13 +1275,15 @@ p, dd, li { text-wrap: pretty; }
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.8rem;
   align-items: baseline;
-  padding: 0.95rem 0 1rem;
+  padding: 1.1rem 0 1.15rem;
   border-bottom: 1px solid var(--line);
 }
-.service li > span { font-weight: 500; line-height: 1.35; }
-.service small { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.86rem; font-weight: 400; line-height: 1.45; }
+.service li > span { font-weight: 500; line-height: 1.4; }
+.service small { display: block; margin-top: 0.28rem; color: var(--muted); font-size: 0.88rem; font-weight: 400; line-height: 1.5; }
 .service time { color: var(--signal); font-family: var(--mono); font-size: 0.72rem; white-space: nowrap; }
 @media (max-width: 760px) {
+  .section--workshops { padding-top: 3.6rem; padding-bottom: 4rem; }
+  .section--workshops h2 { font-size: clamp(1.85rem, 7vw, 2.4rem); }
   .outreach__group { grid-template-columns: minmax(0, 1fr); }
   .outreach__type { padding: 0.9rem 0 0.2rem; }
   .talks,

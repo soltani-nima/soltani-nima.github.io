@@ -336,7 +336,7 @@
           <div class="focus__text">
             <h3 id="area-physics-title">Networks bound by their equations</h3>
             <p class="focus__lead">
-              A network fitted only to data can match its samples while breaking the physics that produced them. Physics-informed learning puts the governing equations into training. In PG-KINN [5], a Petrov–Galerkin weak formulation is paired with Kolmogorov–Arnold networks, whose learnable univariate functions replace fixed activations, to solve forward and inverse PDE problems in one framework. The same idea, applied to operators, carries the power-systems work [3]. The directions:
+              A network fitted only to data can match its samples while breaking the physics that produced them. Physics-informed learning puts the governing equations into training. In PG-KINN [6], a Petrov–Galerkin weak formulation is paired with Kolmogorov–Arnold networks, whose learnable univariate functions replace fixed activations, to solve forward and inverse PDE problems in one framework. The same idea, applied to operators, carries the power-systems work [3]. The directions:
             </p>
             <ol class="focus__qs">
             <li>When does a weak, Petrov–Galerkin form of the residual train more reliably than the pointwise residual of standard physics-informed networks?</li>
@@ -380,7 +380,7 @@
           <div class="focus__text">
             <h3 id="area-energy-title">Fast, physics-consistent power-system dynamics</h3>
             <p class="focus__lead">
-              After a disturbance, whether a generator stays in step with the grid is decided in the first seconds of its swing. Checking that across many operating conditions means solving the same equations again and again. Paper [3] learns those solutions as an operator: a physics-informed DeepONet for the classical swing dynamics of a single-machine infinite-bus system, trained to respect the swing equation and its initial state. The directions:
+              After a disturbance, whether a generator stays in step with the grid is decided in the first seconds of its swing. Checking that across many operating conditions means solving the same equations again and again. Paper [3] learns those solutions as an operator: a physics-informed DeepONet for the classical swing dynamics of a single-machine infinite-bus system, trained to respect the swing equation and its initial state. Paper [4] learns a related forward map for distribution feeders, where the switch configuration itself is an input to a spatio-temporal graph transformer that returns voltages, feeder loss, and overload indications. The directions:
             </p>
             <ol class="focus__qs">
             <li>Can one operator network replace repeated numerical solves of the swing equation across initial states and mechanical set-points while staying consistent with the physics?</li>
@@ -388,7 +388,7 @@
             <li>What would it take to extend such surrogates from the classical single-machine model toward richer machine models and multi-machine systems?</li>
             </ol>
             <div class="focus__foot">
-              <p class="focus__meta"><span>Power systems</span><span>Transient stability</span><span>Swing equation</span><span>DeepONet</span><span>Surrogate modelling</span></p>            </div>
+              <p class="focus__meta"><span>Power systems</span><span>Transient stability</span><span>Swing equation</span><span>DeepONet</span><span>Graph transformers</span><span>Distribution networks</span><span>Surrogate modelling</span></p>            </div>
           </div>
           <figure class="focus__fig" aria-hidden="true">
           <svg viewBox="0 0 360 180" class="loop">
@@ -539,8 +539,19 @@
           <p class="writing__by"><b>N. Soltani</b>, A. Sadr, D. Rahmati</p>
           <p class="writing__note">Learns one operator that maps a generator&rsquo;s initial rotor angle, speed, and mechanical power to its full swing trajectory, matching the initial state exactly and keeping predictions consistent with the swing equation.</p>
         </li>
-        <li class="writing reveal" id="pub-4" data-reveal data-topics="brain">
+        <li class="writing reveal" id="pub-4" data-reveal data-topics="energy">
           <span class="writing__index" aria-hidden="true">4</span>
+          <div class="writing__meta">
+            <span class="badge">Under review</span>
+            <span><i>IEEE Transactions on Smart Grid</i> · IEEE</span>
+            <span class="writing__extra">First author</span>
+          </div>
+          <h3>A Spatio-Temporal Graph Transformer Surrogate for Distribution Voltages under Switching Topologies</h3>
+          <p class="writing__by"><b>N. Soltani</b>, A. Sadr, D. Rahmati</p>
+          <p class="writing__note">Takes a short window of bus injections and an observed switch vector as inputs, rebuilds message passing on the energized adjacency, and returns voltage and feeder-loss trajectories with overload indications.</p>
+        </li>
+        <li class="writing reveal" id="pub-5" data-reveal data-topics="brain">
+          <span class="writing__index" aria-hidden="true">5</span>
           <div class="writing__meta">
             <span class="badge">Under review</span>
             <span><i>Biomedical Signal Processing and Control</i> · Elsevier</span>
@@ -550,8 +561,8 @@
           <p class="writing__by"><b>N. Soltani</b>, M. Eidi, A. Sadr, D. Rahmati</p>
           <p class="writing__note">Fuses a tri-domain EEG feature bank and nonlinear complexity measures with a compact xLSTM encoder and a Broad Learning System classifier for epileptic seizure detection.</p>
         </li>
-        <li class="writing reveal" id="pub-5" data-reveal data-topics="physics">
-          <span class="writing__index" aria-hidden="true">5</span>
+        <li class="writing reveal" id="pub-6" data-reveal data-topics="physics">
+          <span class="writing__index" aria-hidden="true">6</span>
           <div class="writing__meta">
             <span class="badge badge--soft">Preprint</span>
             <span>arXiv</span>
@@ -580,7 +591,9 @@
               Deep reinforcement learning and multimodal models for market modelling and automated
               trading: MTDP-PPO, which fuses modalities through transformers and diffusion policies;
               fused xLSTM–PPO agents with graph and hypergraph models of market structure; PG-KINN
-              for PDEs; and physics-informed operator networks for power-system swing dynamics.
+              for PDEs; physics-informed operator networks for power-system swing dynamics; and a
+              spatio-temporal graph transformer surrogate for distribution voltages under switching
+              topologies.
             </p>
           </div>
         </article>

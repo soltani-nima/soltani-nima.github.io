@@ -1,0 +1,304 @@
+% !TEX program = pdflatex
+% Academic CV source (publish via assets/CV-Nima-Soltani.pdf).
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1.7cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+\definecolor{ink}{HTML}{111111}
+\definecolor{navy}{HTML}{1a365d}
+\definecolor{maroon}{HTML}{7a2e2e}
+\definecolor{terra}{HTML}{8b5a3c}
+\definecolor{linkblue}{HTML}{1a4f9c}
+\definecolor{muted}{HTML}{555555}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=ink,
+  pdfauthor={Nima Soltani},
+  pdftitle={Curriculum Vitae — Nima Soltani}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\color{ink}
+
+\setlist[itemize]{leftmargin=1.15em,itemsep=0.22em,parsep=0pt,topsep=0.2em,partopsep=0pt,label=$\circ$}
+\setlist[enumerate]{leftmargin=1.15em,itemsep=0.35em,parsep=0pt,topsep=0.25em,partopsep=0pt,label=$\circ$}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries\raggedright}
+  {\thesection}{0em}{\MakeUppercase}
+  [\vspace{0.1em}{\color{ink}\hrule height 0.6pt}\vspace{0.4em}]
+\titlespacing*{\section}{0pt}{0.9em}{0.3em}
+
+\newcommand{\subheader}[1]{%
+  \vspace{0.35em}{\bfseries\normalsize #1}\par\vspace{0.2em}%
+}
+
+\newcommand{\entry}[3]{%
+  \noindent
+  \begin{minipage}[t]{2.4cm}\raggedright\small\color{muted}#1\end{minipage}%
+  \hspace{0.4cm}%
+  \begin{minipage}[t]{\dimexpr\textwidth-2.8cm\relax}%
+    \textbf{#2}\\[0.12em]
+    {\small #3}%
+  \end{minipage}%
+  \par\vspace{0.38em}%
+}
+
+\newcommand{\ta}[3]{%
+  {\small\textbf{#1} --- #2\hfill {\color{muted}#3}}\\[0.05em]
+}
+
+\newcommand{\contactline}[2]{%
+  \noindent{\small #1~~#2}\par\vspace{0.12em}%
+}
+
+\begin{document}
+
+% —— Header (Sadr style) ——
+\noindent
+{\LARGE\bfseries Nima Soltani}
+\hfill
+{\large October 2026}
+
+\vspace{0.25em}
+\noindent{\large\bfseries Institute for Research in Fundamental Sciences (IPM)}\\[0.08em]
+{\normalsize Shahid Beheshti University}
+
+\vspace{0.45em}
+\contactline{\faPhone*}{Phone Number: \href{tel:+989023145710}{+98 902 314 5710}}
+\contactline{\faEnvelope}{Email Address: \href{mailto:nimasoltani.ce@gmail.com}{nimasoltani.ce@gmail.com} / \href{mailto:ni.soltani@mail.sbu.ac.ir}{ni.soltani@mail.sbu.ac.ir}}
+\contactline{\faMousePointer}{Other Profiles:
+  \href{https://orcid.org/0009-0001-1312-2395}{ORCID} --
+  \href{https://scholar.google.com/citations?user=js3rIYIAAAAJ&hl=en}{Google Scholar} --
+  \href{https://www.researchgate.net/profile/Nima-Soltani-5}{ResearchGate} --
+  \href{https://www.linkedin.com/in/nima-soltani-334496323/}{LinkedIn} --
+  \href{https://github.com/Nimasol42}{GitHub} --
+  \href{https://soltani-nima.github.io/}{Website}}
+
+\vspace{0.35em}
+
+\section*{Research Interests}
+
+\begin{multicols}{2}
+\begin{itemize}
+  \item Multimodal Reinforcement Learning
+  \item Financial Time Series
+  \item Graph \& Hypergraph Networks
+  \item Physics-Informed Neural Networks
+  \item Neural Operators
+  \item Power-System Dynamics
+  \item MEG \& EEG Analysis
+  \item Vision--Action
+  \item Deception
+  \item Blockchain / Ethereum
+\end{itemize}
+\end{multicols}
+
+\section*{Education}
+
+\entry{2023--present}{B.Sc.\ Computer Engineering}{Shahid Beheshti University, Tehran. GPA 3.61 / 4.}
+
+\entry{2020--2023}{Diploma in Mathematics \& Physics}{Sampad (National Organization for Development of Exceptional Talents), Zanjan. GPA 3.88 / 4. Ranked 254th nationwide (top 0.2\%), Iranian National University Entrance Exam, 2023.}
+
+\entry{2017--2020}{Middle school}{Sampad, Zanjan. GPA 20 / 20.}
+
+\section*{Research Appointments}
+
+\entry{2023--present}{Research Assistant}{Institute for Research in Fundamental Sciences (IPM), with Dr.\ Dara Rahmati. Deep reinforcement learning and multimodal models for market modelling and automated trading (transformer and diffusion-policy agents; fused xLSTM--PPO; graph and hypergraph models of market structure); physics-informed Kolmogorov--Arnold networks for PDEs; physics-informed operator networks for power-system swing dynamics; spatio-temporal graph transformer surrogates for distribution voltages under switching topologies.}
+
+\entry{2024--present}{Research Assistant}{Shahid Beheshti University · Blockchain Systems, with Dr.\ Maedeh Mosharraf. Blockchain architecture and Ethereum protocol design, Solidity smart contracts, consensus, on-chain transaction modelling, and security analysis of cryptocurrency and DeFi infrastructure.}
+
+\entry{2026--present}{Research Assistant}{Shahid Beheshti University · Computational Neuroscience, with Dr.\ Narjes Soltani. MEG preprocessing, source localization, and neural decoding, with spectral and time--frequency analysis related to visual perception and cognition.}
+
+\section*{Publications}
+
+\begin{itemize}
+  \item {\color{maroon}\textit{[Under review]}}
+    \textbf{N.~Soltani}, A.~Sadr, A.~Pakniyat, K.~Pakzad, and D.~Rahmati.
+    {\color{navy}\textbf{Automated Stock Trading Using Deep Reinforcement Learning and Fused xLSTM Networks}}.
+    \textit{Applied Soft Computing}, Elsevier. Preprint on SSRN.
+
+  \item {\color{maroon}\textit{[Under review]}}
+    \textbf{N.~Soltani}, A.~Sadr, and D.~Rahmati.
+    {\color{navy}\textbf{Robust Multimodal Portfolio Trading Using Transformer-Based PPO: Technical--Fundamental Fusion with Conservative On-Policy Diffusion}}.
+    \textit{Knowledge-Based Systems}, Elsevier.
+
+  \item {\color{maroon}\textit{[Under review]}}
+    \textbf{N.~Soltani}, A.~Sadr, and D.~Rahmati.
+    {\color{navy}\textbf{Physics-Informed Deep Operator Networks for Classical Swing Dynamics in Single-Machine Infinite-Bus Systems}}.
+    \textit{IEEE Transactions on Power Systems}, IEEE.
+
+  \item {\color{maroon}\textit{[Under review]}}
+    \textbf{N.~Soltani}, A.~Sadr, and D.~Rahmati.
+    {\color{navy}\textbf{A Spatio-Temporal Graph Transformer Surrogate for Distribution Voltages under Switching Topologies}}.
+    \textit{IEEE Transactions on Smart Grid}, IEEE.
+
+  \item {\color{maroon}\textit{[Under review]}}
+    \textbf{N.~Soltani}, M.~Eidi, A.~Sadr, and D.~Rahmati.
+    {\color{navy}\textbf{A Lightweight xLSTM-BLS Method with Non-linear Feature Fusion for Accurate Epileptic Seizure Detection Using EEG Signals}}.
+    \textit{Biomedical Signal Processing and Control}, Elsevier.
+
+  \item {\color{maroon}\textit{[Preprint]}}
+    A.~Sadr, \textbf{N.~Soltani}, V.~Moghtadaiee, A.~Pakniyat, D.~Rahmati, and S.~Gorgin.
+    {\color{navy}\textbf{PG-KINN: A Physics-Informed Petrov--Galerkin Kolmogorov--Arnold Network for Solving Forward and Inverse PDEs}}.
+    arXiv preprint.
+\end{itemize}
+
+\section*{Teaching Assistantships}
+
+{\small Since 2024 at Sharif University of Technology, Amirkabir University of Technology, and Shahid Beheshti University.}\\[0.28em]
+
+\subheader{Sharif University of Technology}
+\ta{Data Mining}{Dr.\ Mohammad Khalooei}{Sep 2026--Feb 2027}
+\ta{Compiler}{Ms.\ Samane Hosseinmardi}{Sep 2026--Feb 2027}
+\ta{Machine Learning Systems Engineering}{Dr.\ Maryam Ramezani}{Sep 2026--Feb 2027}
+\ta{Logic Circuits}{Dr.\ Laleh Arshadi}{Sep 2026--Feb 2027}
+\ta{Logic Circuits}{Dr.\ Shahin Hessabi}{Feb--Jul 2026}
+\ta{Logic Circuits}{Dr.\ Laleh Arshadi}{Feb--Jul 2026}
+\ta{Scientific and Technical Presentation}{Dr.\ Laleh Arshadi}{Feb--Jul 2026}
+\ta{Computer Architecture}{Dr.\ Laleh Arshadi}{Sep 2025--Feb 2026}
+\ta{Logic Circuits}{Dr.\ Laleh Arshadi}{Sep 2025--Feb 2026}
+\ta{Fundamentals of Programming}{Mr.\ Mohammad Nazari}{Sep 2025--Feb 2026}
+\ta{Computer Architecture}{Dr.\ Laleh Arshadi}{Jan--Jun 2025}
+\ta{Fundamentals of Programming}{Ms.\ Marziyeh Sadri}{Jan--Jun 2025}
+\ta{Fundamentals of Programming}{Mr.\ Mohammad Zarei}{Jan--Jun 2025}
+\ta{Fundamentals of Programming}{Mr.\ Mohammad Nazari}{Sep 2024--Jan 2025}
+
+\subheader{Amirkabir University of Technology}
+\ta{Data Mining}{Dr.\ Behnam Yousefimehr}{Sep 2026--Feb 2027}
+
+\subheader{Shahid Beheshti University}
+\ta{Principles of Design and Analysis of Experiments (Graduate; Head TA)}{Dr.\ Narjes Soltani Dehaghani}{Sep 2026--Feb 2027}
+\ta{Signals and Systems and Digital Control (Graduate; Head TA)}{Dr.\ Zeinab Pourbafarani}{Sep 2026--Feb 2027}
+\ta{Database}{Dr.\ Hassan Haghighi}{Sep 2026--Feb 2027}
+\ta{Engineering Probability and Statistics (Head TA)}{Dr.\ Narjes Soltani Dehaghani}{Sep 2026--Feb 2027}
+\ta{Blockchain Technology (Graduate)}{Dr.\ Maedeh Mosharraf Dehkordi}{Sep 2026--Feb 2027}
+\ta{Blockchain Technology (Graduate)}{Dr.\ Maedeh Mosharraf Dehkordi}{Feb--Jul 2026}
+\ta{Linear Algebra (Head TA)}{Dr.\ Farokhlagha Moazami Goodarzi}{Feb--Jul 2026}
+\ta{Fundamentals of Data Mining (Head TA)}{Dr.\ Ahmad-Ali Abin}{Feb--Jul 2026}
+\ta{Advanced Programming}{Dr.\ Mojtaba Vahidi Asl}{Feb--Jul 2026}
+\ta{Data Structures and Algorithms}{Dr.\ Ahmad-Ali Abin}{Sep 2025--Feb 2026}
+\ta{Fundamentals of Programming}{Dr.\ Zeinab Pourbafarani}{Sep 2025--Feb 2026}
+\ta{Fundamentals of Programming (Head TA)}{Dr.\ Mahdi Mojahedi}{Sep 2025--Feb 2026}
+\ta{Computer Architecture}{Dr.\ Dara Rahmati}{Sep 2025--Feb 2026}
+\ta{Formal Languages and Automata Theory}{Dr.\ Ramak Ghavami Zadeh}{Jan--Jun 2025}
+\ta{Computer Architecture}{Dr.\ Razieh Salarifard}{Jan--Jun 2025}
+\ta{Advanced Programming}{Dr.\ Sadegh Aliakbari}{Jan--Jun 2025}
+\ta{Advanced Programming}{Dr.\ Mojtaba Vahidi Asl}{Jan--Jun 2025}
+\ta{Fundamentals of Programming}{Dr.\ Monireh Abdoos}{Jan--Jun 2025}
+\ta{Applied Computer Skills}{Dr.\ Hamed Malek}{Sep 2024--Jan 2025}
+
+\section*{Voluntarily Activities}
+
+\vspace{0.25em}
+\subheader{Workshops}
+\begin{itemize}[itemsep=0.55em,topsep=0.35em]
+  \item \textbf{Fundamentals of Programming.}
+    Pointers, dynamic memory, and recursion in C: memory layout, \texttt{malloc}/\texttt{free}, dangling pointers and leaks; recursion from base cases through the call stack, with backtracking and divide-and-conquer exercises.
+  \item \textbf{Logic Circuits.}
+    Combinational and sequential design: Boolean minimisation, building blocks, flip-flops, and finite-state machines, with designs checked in a simulation tool.
+  \item \textbf{Linear Algebra.}
+    SVD, PCA, and numerical methods in Python: decompositions in NumPy, PCA on real data, and why numerical stability matters in practice.
+  \item \textbf{Advanced Programming.}
+    Java OOP (classes, interfaces, polymorphism) and a small 2D Unity game in C\# organised with object-oriented patterns.
+  \item \textbf{Data Structures and Algorithms.}
+    Graph traversal and dynamic programming: BFS, DFS, and shortest paths; turning problems into recurrences solved with memoisation or tabulation.
+  \item \textbf{Data Mining.}
+    Practical sessions with scikit-learn on preprocessing, feature engineering, clustering, and classification, with attention to evaluation and data leakage.
+  \item \textbf{Machine Learning Systems Engineering.}
+    Reproducible ML pipelines: experiment tracking, configuration management, versioned data and models, and basics of packaging and deploying a trained model.
+  \item \textbf{Principles of Design and Analysis of Experiments.}
+    Experiment design and simulation in Python and R: randomisation, blocking, and factorial designs; simulation for effect sizes, power, and ANOVA.
+  \item \textbf{Blockchain Technology.}
+    Ethereum smart contracts and security: writing, testing, and deploying Solidity contracts; common vulnerabilities (reentrancy, access control) and how audits find them.
+  \item \textbf{Computer Architecture.}
+    Instruction set architecture and MIPS assembly: instruction formats, addressing modes, register conventions, and hand-written assembly for loops, procedures, and the stack.
+\end{itemize}
+
+\vspace{0.45em}
+\subheader{Service}
+\begin{itemize}[itemsep=0.5em,topsep=0.3em]
+  \item \textbf{Volunteer mentor} for first-year computer engineering students at Shahid Beheshti University, helping with coursework, study habits, and settling into university life.
+  \item \textbf{Secretariat member}, 1st International Conference on Artificial Intelligence, Tehran, February 2025.
+  \item \textbf{Problem-solving and review sessions} before midterms and finals, working through exam-style problems with students.
+  \item \textbf{Assignment and project design}: programming assignments, projects, test cases, and grading rubrics, plus course materials (worked solutions, slides, short guides) and project mentoring with detailed code review.
+\end{itemize}
+\vspace{0.25em}
+
+\section*{Selected Course Projects}
+
+\begin{itemize}
+  \item \textbf{Adversarial Game Agent} \hfill {\small\color{muted}Artificial Intelligence}\\[-0.05em]
+        {\small Minimax with alpha--beta pruning and heuristic evaluation.}
+  \item \textbf{SVD Recommender} \hfill {\small\color{muted}Linear Algebra}\\[-0.05em]
+        {\small SVD/PCA recommender evaluated by RMSE and MAE.}
+  \item \textbf{Virtual Memory Simulator} \hfill {\small\color{muted}Operating Systems}\\[-0.05em]
+        {\small LRU and Second Chance page-replacement comparison.}
+  \item \textbf{SBUMIPS Processor} \hfill {\small\color{muted}Computer Architecture}\\[-0.05em]
+        {\small Pipelined MIPS-like processor in Verilog (ModelSim).}
+  \item \textbf{Survival Game in Unity} \hfill {\small\color{muted}Advanced Programming}\\[-0.05em]
+        {\small 2D game with an object-oriented architecture.}
+  \item \textbf{File Compression Tool} \hfill {\small\color{muted}Fundamentals of Programming}\\[-0.05em]
+        {\small Custom encoding with attention to time and memory.}
+\end{itemize}
+
+\section*{Skills}
+
+{\setlength{\tabcolsep}{0.55em}%
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X @{}}
+Programming & {\small Python, C, C++, C\#, Java, MATLAB, R, SQL, Verilog}\\[0.28em]
+Deep learning & {\small PyTorch, PyTorch Lightning, JAX, Hugging Face, scikit-learn, ONNX, OpenCV}\\[0.28em]
+RL \& sequences & {\small PPO, xLSTM, diffusion policies, Stable-Baselines3, Gymnasium, FinRL, transformers, Mamba/SSM}\\[0.28em]
+Graphs \& physics & {\small PINNs, KANs, PyTorch Geometric, DGL, hypergraph networks, DeepXDE, DeepONet, FNO}\\[0.28em]
+Signals & {\small MNE-Python, FieldTrip, Brainstorm, EEGLAB, source localization, time--frequency analysis, neural decoding}\\[0.28em]
+Data \& finance & {\small SQL, NumPy, pandas, SciPy, Matplotlib, Seaborn, statsmodels, XGBoost, LightGBM, CatBoost, Dask, Microsoft Excel, Power BI, yfinance, pandas-ta, FinBERT}\\[0.28em]
+Blockchain & {\small Solidity, Ethereum, Hardhat, Foundry, web3.py, ethers.js, OpenZeppelin, Slither}\\[0.28em]
+Infrastructure & {\small Git, Linux, Docker, CUDA, SLURM/HPC, Weights \& Biases, MLflow, TensorBoard, Hydra, Optuna, \LaTeX/Overleaf, Zotero, ModelSim, Unity}\\
+\end{tabularx}}
+
+\section*{Honors, Training, and Meetings}
+
+\subheader{Distinctions \& training}
+\begin{itemize}
+  \item Ranked 254th nationwide (top 0.2\%), Iranian National University Entrance Exam, 2023.
+  \item NeuroCONNECT Summer School in Computational Neuroscience (CONNECT), Aug 2026.
+  \item Advanced Algorithmic Thinking and Data Structures Certificate (Quera).
+  \item Academic Article Writing Workshop, Institute for Advanced Studies in Basic Sciences.
+  \item Serious Game Design with a Cognitive Approach, workshop, Shahid Beheshti University.
+  \item ICDL Certification, Technical and Vocational Training Organization.
+\end{itemize}
+
+\subheader{Conferences \& memberships}
+\begin{itemize}
+  \item Participant, International Interdisciplinary Conference on Artificial Intelligence (IICAI), Shahid Beheshti University / IEEE, May 2026.
+  \item Participant, 9th Conference on Advances in Enterprise Architecture of Iran, Shahid Beheshti University, Nov 2025.
+  \item ISCISC 2025 specialized workshops (BIOS security, fault injection, code readout, smart-card authentication, AI for cybersecurity), Oct 2025.
+  \item Prompt Engineering for Large Language Models, workshop, 1st ICAI, Feb 2025.
+  \item Member, Iranian Bioinformatics Society (IBIS).
+\end{itemize}
+
+\section*{Languages}
+
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.4cm} X @{}}
+Persian & Native\\[0.12em]
+Turkish & Native\\[0.12em]
+English & Professional working proficiency\\
+\end{tabularx}
+
+\end{document}
